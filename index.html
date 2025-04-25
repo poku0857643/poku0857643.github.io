@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Engineer Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>LUCY PROTOFOLIO</h1>
+    <p>Machine Learning System Designer | Recommender Systems | Time-Series Forecasting</p>
+  </header>
+
+  <section class="bio slide" id="bio-slide">
+    <h2>About Me</h2>
+
+    <p>
+        I am an AI Engineer with a cross-disciplinary foundation in machine learning, biomedical research, and system architecture. My expertise lies in building scalable AI systems—ranging from time-series forecasting tools and recommendation engines to fine-tuned large language models and real-time biosignal analysis platforms. With hands-on experience across the full ML pipeline, I focus on delivering intelligent, data-driven solutions that are production-ready and cloud-native.
+    </p>
+
+    <p>
+        My technical portfolio includes projects deployed using FastAPI, Docker, and GitHub Actions, with model serving infrastructure running on platforms like Google Cloud and Vercel. I take pride in developing systems that not only work, but scale—handling dynamic data, adapting to user behavior, and offering seamless integration with user-facing interfaces.
+    </p>
+
+    <p>
+        Looking ahead, I aim to lead and contribute to global tech initiatives that merge AI innovation with real-world strategy—whether in fintech, biomedical intelligence, or multilingual systems. I'm passionate about building bridges between engineering, user experience, and strategic growth, and continuously exploring how intelligent systems can empower individuals and scale across borders.
+    </p>
+
+
+    <p>
+      I'm an AI Engineer experienced in building end-to-end machine learning systems, integrating real-time data pipelines, and deploying models at scale. My work spans trend prediction, recommendation engines, LLM fine-tuning, and biomedical signal processing.
+    </p>
+      </section>
+
+  <section class="skills slide" id="skills-slide">
+    <h2>Skills</h2>
+    <ul>
+      <li>Python, FastAPI, Docker, GCP, GitHub Actions</li>
+      <li>TensorFlow, PyTorch, Scikit-learn</li>
+      <li>MongoDB, SQLite, PostgreSQL</li>
+      <li>React, Vercel, GitHub Pages</li>
+    </ul>
+  </section>
+
+  <section class="projects slide" id="projects-slide">
+    <h2>Projects</h2>
+    <div class="project-slider-container">
+      <div class="project-slider">
+        <div class="project-slide-item" onclick="flipCard('trend-predictor')">
+          <div class="project-card front" id="trend-predictor-front"
+                style="background-image: url('./project_images/trend predictor_image.png'); background-size:cover; background-position: center;">
+              <div class="card-title-overly">
+                  <h3>📈 Trend Predictor</h3>
+                  <p>Time-series forecasting tool...</p>
+              </div>
+          </div>
+          <div class="project-card back" id="trend-predictor-back">
+            <h4>Trend Predictor Details</h4>
+            <ul>
+              <li>ARIMA/Prophet</li>
+              <li>SQLite Logging</li>
+              <li>Dashboard Analytics</li>
+            </ul>
+            <button class="flip-back-button" onclick="flipCard('trend-predictor')">Back</button>
+          </div>
+        </div>
+
+        <div class="project-slide-item" onclick="flipCard('llm-chatbot')">
+          <div class="project-card front" id="llm-chatbot-front">
+            <h3>🤖 LLM Chatbot</h3>
+            <p>Chatbot with fine-tuned LLaMA...</p>
+          </div>
+          <div class="project-card back" id="llm-chatbot-back">
+            <h4>LLM Chatbot Details</h4>
+            <ul>
+              <li>Fine-tuned LLaMA</li>
+              <li>RAG Data</li>
+              <li>Abuse Detection</li>
+            </ul>
+            <button class="flip-back-button" onclick="flipCard('llm-chatbot')">Back</button>
+          </div>
+        </div>
+
+        <div class="project-slide-item" onclick="flipCard('blood-pressure')">
+          <div class="project-card front" id="blood-pressure-front">
+            <h3>🩺 Blood Pressure Estimator</h3>
+            <p>PPG + ECG signal fusion...</p>
+          </div>
+          <div class="project-card back" id="blood-pressure-back">
+            <h4>Blood Pressure Details</h4>
+            <ul>
+              <li>PPG + ECG Fusion</li>
+              <li>Real-time Prediction</li>
+            </ul>
+            <button class="flip-back-button" onclick="flipCard('blood-pressure')">Back</button>
+          </div>
+        </div>
+
+        <div class="project-slide-item" onclick="flipCard('chat-search')">
+          <div class="project-card front" id="chat-search-front">
+            <h3>💬 Cross-National Chat Search</h3>
+            <p>Search engine with NER...</p>
+          </div>
+          <div class="project-card back" id="chat-search-back">
+            <h4>Chat Search Details</h4>
+            <ul>
+              <li>NER Support</li>
+              <li>Multilingual (EN/ZH)</li>
+            </ul>
+            <button class="flip-back-button" onclick="flipCard('chat-search')">Back</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="repositories slide" id="repositories-slide">
+    <h2>Top GitHub Repositories</h2>
+    <ul class="repository-list">
+      <li><a href="YOUR_REPO_LINK_1" target="_blank">Repository Name 1</a> - Brief description.</li>
+      <li><a href="YOUR_REPO_LINK_2" target="_blank">Repository Name 2</a> - Brief description.</li>
+      <li><a href="YOUR_REPO_LINK_3" target="_blank">Repository Name 3</a> - Brief description.</li>
+      <li><a href="YOUR_REPO_LINK_4" target="_blank">Repository Name 4</a> - Brief description.</li>
+      <li><a href="YOUR_REPO_LINK_5" target="_blank">Repository Name 5</a> - Brief description.</li>
+      <li><a href="YOUR_REPO_LINK_6" target="_blank">Repository Name 6</a> - Brief description.</li>
+    </ul>
+  </section>
+
+  <div class="navigation">
+    <button onclick="navigateTo('bio-slide')">About Me</button>
+    <button onclick="navigateTo('skills-slide')">Skills</button>
+    <button onclick="navigateTo('projects-slide')">Projects</button>
+    <button onclick="navigateTo('repositories-slide')">Repositories</button>
+  </div>
+
+  <footer>
+    <p>
+      Connect:
+      <a href="YOUR_MEDIUM_LINK" target="_blank">Medium</a> |
+      <a href="YOUR_LINKEDIN_LINK" target="_blank">LinkedIn</a> |
+      <a href="YOUR_SUBSTACK_LINK" target="_blank">Substack</a>
+    </p>
+  </footer>
+
+  <script src="static.js"></script>
+</body>
+</html>
