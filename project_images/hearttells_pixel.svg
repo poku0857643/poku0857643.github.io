@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200">
+  <defs>
+    <linearGradient id="bg6" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="50%" style="stop-color:#16213e"/>
+      <stop offset="100%" style="stop-color:#0f3460"/>
+    </linearGradient>
+  </defs>
+  <!-- Background - Mystical forest crossroads -->
+  <rect width="320" height="200" fill="url(#bg6)"/>
+
+  <!-- Stars -->
+  <g fill="#ffffff" opacity="0.8">
+    <rect x="30" y="12" width="2" height="2"/>
+    <rect x="80" y="20" width="2" height="2"/>
+    <rect x="140" y="8" width="2" height="2"/>
+    <rect x="200" y="15" width="2" height="2"/>
+    <rect x="260" y="10" width="2" height="2"/>
+    <rect x="290" y="25" width="2" height="2"/>
+  </g>
+
+  <!-- Trees in background -->
+  <g fill="#1e3a3a">
+    <!-- Left tree -->
+    <rect x="10" y="40" width="40" height="60" />
+    <rect x="20" y="20" width="20" height="30" />
+    <rect x="25" y="100" width="10" height="60" fill="#3d2914"/>
+    <!-- Right tree -->
+    <rect x="270" y="50" width="40" height="50" />
+    <rect x="280" y="30" width="20" height="30" />
+    <rect x="285" y="100" width="10" height="60" fill="#3d2914"/>
+  </g>
+
+  <!-- Ground path -->
+  <rect x="0" y="160" width="320" height="40" fill="#2d4a3e"/>
+
+  <!-- Two paths diverging -->
+  <!-- Left path (blue/calm) -->
+  <g>
+    <rect x="60" y="140" width="50" height="20" fill="#1e3a5f"/>
+    <rect x="40" y="120" width="40" height="24" fill="#1e3a5f"/>
+    <rect x="20" y="100" width="35" height="24" fill="#1e3a5f"/>
+    <!-- Path stones -->
+    <rect x="70" y="145" width="8" height="8" fill="#2d5a8f"/>
+    <rect x="50" y="128" width="8" height="8" fill="#2d5a8f"/>
+    <rect x="30" y="108" width="8" height="8" fill="#2d5a8f"/>
+  </g>
+
+  <!-- Right path (red/exciting) -->
+  <g>
+    <rect x="210" y="140" width="50" height="20" fill="#5f1e1e"/>
+    <rect x="240" y="120" width="40" height="24" fill="#5f1e1e"/>
+    <rect x="265" y="100" width="35" height="24" fill="#5f1e1e"/>
+    <!-- Path stones -->
+    <rect x="240" y="145" width="8" height="8" fill="#8f2d2d"/>
+    <rect x="260" y="128" width="8" height="8" fill="#8f2d2d"/>
+    <rect x="280" y="108" width="8" height="8" fill="#8f2d2d"/>
+  </g>
+
+  <!-- Character at crossroads -->
+  <g transform="translate(145, 95)">
+    <!-- Body -->
+    <rect x="4" y="28" width="24" height="40" fill="#4a5568"/>
+    <rect x="8" y="32" width="16" height="32" fill="#5a6578"/>
+    <!-- Head -->
+    <rect x="8" y="8" width="16" height="20" fill="#ffccbc"/>
+    <!-- Hair -->
+    <rect x="6" y="4" width="20" height="8" fill="#5d4037"/>
+    <!-- Eyes (looking contemplative) -->
+    <rect x="10" y="14" width="4" height="4" fill="#333"/>
+    <rect x="18" y="14" width="4" height="4" fill="#333"/>
+    <!-- Question marks above head -->
+    <rect x="10" y="-8" width="4" height="4" fill="#fbbf24"/>
+    <rect x="18" y="-8" width="4" height="4" fill="#fbbf24"/>
+  </g>
+
+  <!-- Heart compass (glowing) -->
+  <g transform="translate(138, 45)">
+    <!-- Compass base -->
+    <rect x="8" y="8" width="28" height="28" fill="#7c2d12"/>
+    <rect x="12" y="12" width="20" height="20" fill="#dc2626"/>
+    <!-- Heart shape in center -->
+    <rect x="16" y="14" width="4" height="4" fill="#fef08a"/>
+    <rect x="24" y="14" width="4" height="4" fill="#fef08a"/>
+    <rect x="14" y="18" width="16" height="6" fill="#fef08a"/>
+    <rect x="16" y="24" width="12" height="4" fill="#fef08a"/>
+    <rect x="20" y="28" width="4" height="2" fill="#fef08a"/>
+    <!-- Compass glow -->
+    <rect x="4" y="4" width="36" height="36" fill="#fbbf24" opacity="0.2"/>
+    <!-- Needle pointing (animated feel) -->
+    <rect x="22" y="0" width="2" height="12" fill="#fbbf24"/>
+  </g>
+
+  <!-- Choice A indicator (left - calm blue) -->
+  <g transform="translate(30, 60)">
+    <rect x="0" y="0" width="32" height="28" fill="#1e3a5f"/>
+    <rect x="4" y="4" width="24" height="20" fill="#3b82f6"/>
+    <!-- Peaceful symbol -->
+    <rect x="12" y="8" width="8" height="2" fill="#fff"/>
+    <rect x="12" y="12" width="8" height="2" fill="#fff"/>
+    <rect x="12" y="16" width="8" height="2" fill="#fff"/>
+    <!-- Glow -->
+    <rect x="-4" y="-4" width="40" height="36" fill="#60a5fa" opacity="0.2"/>
+  </g>
+
+  <!-- Choice B indicator (right - exciting red) -->
+  <g transform="translate(258, 60)">
+    <rect x="0" y="0" width="32" height="28" fill="#5f1e1e"/>
+    <rect x="4" y="4" width="24" height="20" fill="#dc2626"/>
+    <!-- Exciting symbol (lightning) -->
+    <rect x="14" y="6" width="8" height="4" fill="#fef08a"/>
+    <rect x="12" y="10" width="8" height="4" fill="#fef08a"/>
+    <rect x="14" y="14" width="8" height="4" fill="#fef08a"/>
+    <rect x="16" y="18" width="4" height="4" fill="#fef08a"/>
+    <!-- Glow -->
+    <rect x="-4" y="-4" width="40" height="36" fill="#f87171" opacity="0.2"/>
+  </g>
+
+  <!-- Emotional aura particles -->
+  <!-- Blue calm particles (left) -->
+  <g fill="#60a5fa" opacity="0.7">
+    <rect x="50" y="80" width="4" height="4"/>
+    <rect x="70" y="100" width="4" height="4"/>
+    <rect x="45" y="115" width="4" height="4"/>
+    <rect x="85" y="90" width="4" height="4"/>
+  </g>
+  <!-- Red exciting particles (right) -->
+  <g fill="#f87171" opacity="0.7">
+    <rect x="250" y="85" width="4" height="4"/>
+    <rect x="270" y="95" width="4" height="4"/>
+    <rect x="255" y="110" width="4" height="4"/>
+    <rect x="235" y="100" width="4" height="4"/>
+  </g>
+
+  <!-- Fireflies/magic particles -->
+  <g fill="#fef08a" opacity="0.6">
+    <rect x="100" y="70" width="3" height="3"/>
+    <rect x="200" y="75" width="3" height="3"/>
+    <rect x="160" y="130" width="3" height="3"/>
+    <rect x="130" y="80" width="3" height="3"/>
+    <rect x="180" y="90" width="3" height="3"/>
+  </g>
+</svg>

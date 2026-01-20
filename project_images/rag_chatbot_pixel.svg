@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200">
+  <defs>
+    <linearGradient id="bg1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="100%" style="stop-color:#16213e"/>
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="320" height="200" fill="url(#bg1)"/>
+
+  <!-- Floor tiles -->
+  <g fill="#2d3a4a">
+    <rect x="0" y="160" width="40" height="40"/>
+    <rect x="80" y="160" width="40" height="40"/>
+    <rect x="160" y="160" width="40" height="40"/>
+    <rect x="240" y="160" width="40" height="40"/>
+  </g>
+  <g fill="#3d4a5a">
+    <rect x="40" y="160" width="40" height="40"/>
+    <rect x="120" y="160" width="40" height="40"/>
+    <rect x="200" y="160" width="40" height="40"/>
+    <rect x="280" y="160" width="40" height="40"/>
+  </g>
+
+  <!-- Bookshelf left -->
+  <rect x="20" y="60" width="60" height="100" fill="#8B4513"/>
+  <rect x="24" y="64" width="52" height="20" fill="#654321"/>
+  <rect x="24" y="88" width="52" height="20" fill="#654321"/>
+  <rect x="24" y="112" width="52" height="20" fill="#654321"/>
+  <!-- Books -->
+  <rect x="28" y="66" width="8" height="16" fill="#e74c3c"/>
+  <rect x="38" y="66" width="6" height="16" fill="#3498db"/>
+  <rect x="46" y="66" width="10" height="16" fill="#2ecc71"/>
+  <rect x="58" y="66" width="8" height="16" fill="#9b59b6"/>
+  <rect x="28" y="90" width="10" height="16" fill="#f39c12"/>
+  <rect x="40" y="90" width="8" height="16" fill="#1abc9c"/>
+  <rect x="50" y="90" width="12" height="16" fill="#e91e63"/>
+
+  <!-- Wizard NPC -->
+  <g transform="translate(140, 80)">
+    <!-- Robe -->
+    <rect x="0" y="24" width="40" height="56" fill="#4a148c"/>
+    <rect x="4" y="28" width="32" height="48" fill="#6a1b9a"/>
+    <!-- Head -->
+    <rect x="8" y="0" width="24" height="24" fill="#ffccbc"/>
+    <!-- Hat -->
+    <rect x="4" y="-20" width="32" height="24" fill="#4a148c"/>
+    <rect x="12" y="-32" width="16" height="16" fill="#4a148c"/>
+    <rect x="16" y="-40" width="8" height="12" fill="#4a148c"/>
+    <!-- Star on hat -->
+    <rect x="18" y="-28" width="4" height="4" fill="#ffd700"/>
+    <!-- Eyes -->
+    <rect x="12" y="8" width="4" height="4" fill="#333"/>
+    <rect x="24" y="8" width="4" height="4" fill="#333"/>
+    <!-- Beard -->
+    <rect x="12" y="16" width="16" height="12" fill="#ecf0f1"/>
+    <rect x="16" y="28" width="8" height="8" fill="#ecf0f1"/>
+    <!-- Staff -->
+    <rect x="42" y="0" width="6" height="80" fill="#8B4513"/>
+    <rect x="40" y="-12" width="10" height="16" fill="#9c27b0"/>
+    <!-- Staff glow -->
+    <rect x="38" y="-16" width="14" height="4" fill="#e1bee7"/>
+    <rect x="42" y="-20" width="6" height="4" fill="#ce93d8"/>
+  </g>
+
+  <!-- Floating books with glow -->
+  <g>
+    <!-- Book 1 -->
+    <rect x="100" y="40" width="20" height="16" fill="#e74c3c" opacity="0.9"/>
+    <rect x="98" y="38" width="4" height="20" fill="#c0392b"/>
+    <!-- Glow -->
+    <rect x="96" y="36" width="28" height="24" fill="#f39c12" opacity="0.2"/>
+  </g>
+  <g>
+    <!-- Book 2 -->
+    <rect x="220" y="50" width="24" height="14" fill="#3498db" opacity="0.9"/>
+    <rect x="218" y="48" width="4" height="18" fill="#2980b9"/>
+    <!-- Glow -->
+    <rect x="216" y="46" width="32" height="22" fill="#00bcd4" opacity="0.2"/>
+  </g>
+  <g>
+    <!-- Book 3 -->
+    <rect x="260" y="90" width="18" height="12" fill="#2ecc71" opacity="0.9"/>
+    <rect x="258" y="88" width="4" height="16" fill="#27ae60"/>
+    <!-- Glow -->
+    <rect x="256" y="86" width="26" height="20" fill="#4caf50" opacity="0.2"/>
+  </g>
+
+  <!-- Treasure chest -->
+  <g transform="translate(240, 120)">
+    <rect x="0" y="16" width="48" height="32" fill="#8B4513"/>
+    <rect x="0" y="0" width="48" height="20" fill="#a0522d"/>
+    <rect x="4" y="4" width="40" height="12" fill="#cd853f"/>
+    <!-- Lock -->
+    <rect x="20" y="20" width="8" height="12" fill="#ffd700"/>
+    <!-- Glow from inside -->
+    <rect x="8" y="24" width="32" height="4" fill="#ffeaa7" opacity="0.6"/>
+  </g>
+
+  <!-- Scrolls on ground -->
+  <rect x="90" y="148" width="24" height="8" fill="#f5deb3"/>
+  <rect x="86" y="146" width="8" height="12" fill="#deb887"/>
+  <rect x="110" y="146" width="8" height="12" fill="#deb887"/>
+
+  <!-- Magic particles -->
+  <rect x="120" y="60" width="4" height="4" fill="#ffd700" opacity="0.8"/>
+  <rect x="200" y="80" width="4" height="4" fill="#e1bee7" opacity="0.8"/>
+  <rect x="180" y="40" width="4" height="4" fill="#81d4fa" opacity="0.8"/>
+  <rect x="80" y="90" width="4" height="4" fill="#a5d6a7" opacity="0.8"/>
+  <rect x="270" y="60" width="4" height="4" fill="#ffcc80" opacity="0.8"/>
+
+  <!-- Window with moonlight -->
+  <rect x="280" y="20" width="30" height="40" fill="#1a237e"/>
+  <rect x="284" y="24" width="10" height="14" fill="#3949ab"/>
+  <rect x="296" y="24" width="10" height="14" fill="#3949ab"/>
+  <rect x="284" y="42" width="10" height="14" fill="#3949ab"/>
+  <rect x="296" y="42" width="10" height="14" fill="#3949ab"/>
+  <!-- Moon -->
+  <rect x="288" y="28" width="8" height="8" fill="#fff9c4"/>
+</svg>
