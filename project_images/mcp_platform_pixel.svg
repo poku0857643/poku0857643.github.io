@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1b2a"/>
+      <stop offset="100%" style="stop-color:#1b263b"/>
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="320" height="200" fill="url(#bg2)"/>
+
+  <!-- Temple floor with mystical pattern -->
+  <rect x="0" y="160" width="320" height="40" fill="#2d3a4a"/>
+  <!-- Floor runes -->
+  <g fill="#3d5a80" opacity="0.5">
+    <rect x="40" y="170" width="8" height="8"/>
+    <rect x="80" y="175" width="8" height="8"/>
+    <rect x="150" y="168" width="8" height="8"/>
+    <rect x="220" y="172" width="8" height="8"/>
+    <rect x="270" y="170" width="8" height="8"/>
+  </g>
+
+  <!-- Central pillar/altar -->
+  <rect x="140" y="100" width="40" height="60" fill="#4a5568"/>
+  <rect x="136" y="96" width="48" height="8" fill="#718096"/>
+  <rect x="144" y="80" width="32" height="20" fill="#5a6578"/>
+
+  <!-- Central orb (gating network) -->
+  <rect x="152" y="60" width="16" height="16" fill="#7c3aed"/>
+  <rect x="148" y="56" width="24" height="24" fill="#8b5cf6" opacity="0.5"/>
+  <rect x="144" y="52" width="32" height="32" fill="#a78bfa" opacity="0.3"/>
+
+  <!-- 8 Expert shrines arranged in circle -->
+  <!-- Expert 1 - Fire (top) -->
+  <g transform="translate(152, 20)">
+    <rect x="0" y="0" width="16" height="20" fill="#7f1d1d"/>
+    <rect x="2" y="2" width="12" height="12" fill="#ef4444"/>
+    <rect x="4" y="4" width="8" height="8" fill="#fca5a5"/>
+  </g>
+
+  <!-- Expert 2 - Water (top-right) -->
+  <g transform="translate(220, 40)">
+    <rect x="0" y="0" width="16" height="20" fill="#1e3a5f"/>
+    <rect x="2" y="2" width="12" height="12" fill="#3b82f6"/>
+    <rect x="4" y="4" width="8" height="8" fill="#93c5fd"/>
+  </g>
+
+  <!-- Expert 3 - Earth (right) -->
+  <g transform="translate(260, 90)">
+    <rect x="0" y="0" width="16" height="20" fill="#422006"/>
+    <rect x="2" y="2" width="12" height="12" fill="#a16207"/>
+    <rect x="4" y="4" width="8" height="8" fill="#fbbf24"/>
+  </g>
+
+  <!-- Expert 4 - Wind (bottom-right) -->
+  <g transform="translate(220, 130)">
+    <rect x="0" y="0" width="16" height="20" fill="#064e3b"/>
+    <rect x="2" y="2" width="12" height="12" fill="#10b981"/>
+    <rect x="4" y="4" width="8" height="8" fill="#6ee7b7"/>
+  </g>
+
+  <!-- Expert 5 - Lightning (bottom-left) -->
+  <g transform="translate(84, 130)">
+    <rect x="0" y="0" width="16" height="20" fill="#4a1d96"/>
+    <rect x="2" y="2" width="12" height="12" fill="#a855f7"/>
+    <rect x="4" y="4" width="8" height="8" fill="#d8b4fe"/>
+  </g>
+
+  <!-- Expert 6 - Ice (left) -->
+  <g transform="translate(44, 90)">
+    <rect x="0" y="0" width="16" height="20" fill="#164e63"/>
+    <rect x="2" y="2" width="12" height="12" fill="#06b6d4"/>
+    <rect x="4" y="4" width="8" height="8" fill="#67e8f9"/>
+  </g>
+
+  <!-- Expert 7 - Light (top-left) -->
+  <g transform="translate(84, 40)">
+    <rect x="0" y="0" width="16" height="20" fill="#713f12"/>
+    <rect x="2" y="2" width="12" height="12" fill="#eab308"/>
+    <rect x="4" y="4" width="8" height="8" fill="#fef08a"/>
+  </g>
+
+  <!-- Expert 8 - Dark (bottom) -->
+  <g transform="translate(152, 140)">
+    <rect x="0" y="0" width="16" height="16" fill="#1f2937"/>
+    <rect x="2" y="2" width="12" height="12" fill="#4b5563"/>
+    <rect x="4" y="4" width="8" height="8" fill="#9ca3af"/>
+  </g>
+
+  <!-- Routing paths (magical lines) -->
+  <g stroke="#8b5cf6" stroke-width="2" opacity="0.6">
+    <line x1="160" y1="76" x2="160" y2="40"/>
+    <line x1="168" y1="68" x2="220" y2="50"/>
+    <line x1="172" y1="72" x2="260" y2="100"/>
+    <line x1="168" y1="80" x2="228" y2="140"/>
+    <line x1="152" y1="80" x2="92" y2="140"/>
+    <line x1="148" y1="72" x2="60" y2="100"/>
+    <line x1="148" y1="68" x2="100" y2="50"/>
+    <line x1="160" y1="84" x2="160" y2="140"/>
+  </g>
+
+  <!-- Glowing particles on paths -->
+  <g fill="#c4b5fd">
+    <rect x="158" y="55" width="4" height="4"/>
+    <rect x="190" y="58" width="4" height="4"/>
+    <rect x="240" y="85" width="4" height="4"/>
+    <rect x="200" y="115" width="4" height="4"/>
+    <rect x="116" y="115" width="4" height="4"/>
+    <rect x="80" y="85" width="4" height="4"/>
+    <rect x="120" y="55" width="4" height="4"/>
+    <rect x="158" y="115" width="4" height="4"/>
+  </g>
+
+  <!-- Mystical fog at bottom -->
+  <g fill="#e0e7ff" opacity="0.1">
+    <rect x="0" y="150" width="320" height="10"/>
+    <rect x="20" y="145" width="40" height="8"/>
+    <rect x="100" y="148" width="60" height="6"/>
+    <rect x="200" y="146" width="50" height="8"/>
+    <rect x="280" y="148" width="40" height="6"/>
+  </g>
+
+  <!-- Stars in background -->
+  <g fill="#ffffff">
+    <rect x="30" y="15" width="2" height="2"/>
+    <rect x="80" y="25" width="2" height="2"/>
+    <rect x="290" y="18" width="2" height="2"/>
+    <rect x="250" y="30" width="2" height="2"/>
+    <rect x="15" y="60" width="2" height="2"/>
+    <rect x="305" y="55" width="2" height="2"/>
+  </g>
+</svg>

@@ -1,57 +1,1211 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lucy Model Demo 24'</title>
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lucy | AI Engineer & Full-Stack Developer</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <h1>Welcome to my GitHub Page</h1>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#demo">Demo</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <section id="about">
-        <h2>About the Project</h2>
-        <p>This AI project is designed to predict and analyze data in a revolutionary way. Our model leveraegs deep learning techniques to provide accurate and reliable results.</p>
-    </section>
-    <section id="features">
-        <h2>Features</h2>
-        <ul>
-            <li>Real-time data analysis</li>
-            <li>High accuracy predictions</li>
-            <li>User-Friendly interface</li>
-            <li>Scalable and robust architecture</li>
-        </ul>
-    </section>
-    <section id="demo">
-        <h2>Live Demo</h2>
-        <button id="demoButton">Run AI Demo</button>
-        <div id="demoResult"></div>
-    </section>
-    <section id="contact">
-        <h2>Contact</h2>
-        <p> If you have any questions or would like to collaborate, feel free to reach out!</p>
-        <form id="contactForm">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
-            <button type="submit">Send</button>
-        </form>
-    </section>
-    <footer>
-        <p>&copy; Lucy Model Demo 24'</p>
-    </footer>
-    <script src="js/script.js"></script>
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">Lucy</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-content">
+      <p class="hero-tag">AI Engineer & Full-Stack Developer</p>
+      <h1>Building Intelligent Systems<br/>That Scale</h1>
+      <p class="hero-subtitle">
+        Specializing in ML systems, LLM applications, biomedical AI, and production-ready full-stack solutions.
+      </p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">View Projects</a>
+        <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="about" class="about">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <div class="about-content">
+        <div class="about-text">
+          <p>
+            I am an AI Engineer with a cross-disciplinary foundation in machine learning, biomedical research, and system architecture. My expertise lies in building scalable AI systems—from time-series forecasting tools and recommendation engines to fine-tuned large language models and real-time biosignal analysis platforms.
+          </p>
+          <p>
+            My technical portfolio includes projects deployed using FastAPI, Docker, and GitHub Actions, with model serving infrastructure on Google Cloud and Vercel. I develop systems that scale—handling dynamic data, adapting to user behavior, and offering seamless integration with user-facing interfaces.
+          </p>
+          <p>
+            I aim to lead and contribute to global tech initiatives that merge AI innovation with real-world strategy—whether in fintech, biomedical intelligence, or multilingual systems.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="skills">
+    <div class="container">
+      <h2 class="section-title">Technical Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h3>AI / Machine Learning</h3>
+          <div class="skill-tags">
+            <span>PyTorch</span>
+            <span>TensorFlow</span>
+            <span>Scikit-learn</span>
+            <span>LangChain</span>
+            <span>RAG Systems</span>
+            <span>LLM Fine-tuning</span>
+            <span>FAISS</span>
+            <span>Hugging Face</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3>Backend Development</h3>
+          <div class="skill-tags">
+            <span>Python</span>
+            <span>FastAPI</span>
+            <span>Node.js</span>
+            <span>PostgreSQL</span>
+            <span>MongoDB</span>
+            <span>Redis</span>
+            <span>GraphQL</span>
+            <span>REST APIs</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3>Frontend & Mobile</h3>
+          <div class="skill-tags">
+            <span>React</span>
+            <span>TypeScript</span>
+            <span>Next.js</span>
+            <span>Swift</span>
+            <span>Vite</span>
+            <span>Tailwind CSS</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3>DevOps & Cloud</h3>
+          <div class="skill-tags">
+            <span>Docker</span>
+            <span>Kubernetes</span>
+            <span>GCP</span>
+            <span>AWS</span>
+            <span>GitHub Actions</span>
+            <span>CI/CD</span>
+            <span>Ray Serve</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="projects">
+    <div class="container">
+      <h2 class="section-title">Featured Projects</h2>
+
+      <div class="project-category">
+        <h3 class="category-title">AI & Machine Learning</h3>
+        <div class="projects-grid">
+
+          <div class="project-card">
+            <div class="project-image">
+              <img src="./project_images/rag_chatbot_pixel.svg" alt="RAG Chatbot">
+            </div>
+            <div class="project-content">
+              <h4>RAG Chatbot with Gemini AI</h4>
+              <p>Production-ready chatbot with Retrieval Augmented Generation, real-time streaming, and document intelligence. Features FAISS vector search, SSE streaming, and mobile-first design.</p>
+              <div class="project-tech">
+                <span>FastAPI</span>
+                <span>React</span>
+                <span>Gemini AI</span>
+                <span>FAISS</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/poku0857643/RAG_chatbot" target="_blank" class="project-link">View Code</a>
+                <button class="project-link design-btn" onclick="openModal('rag-chatbot')">View Design</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-image">
+              <img src="./project_images/mcp_platform_pixel.svg" alt="MCP ML Platform">
+            </div>
+            <div class="project-content">
+              <h4>MCP-Powered ML Prediction Platform</h4>
+              <p>Intelligent question complexity analysis using Sparse Mixture of Experts (MoE) routing with RLHF drift detection. Exposed via Model Context Protocol for LLM consumption.</p>
+              <div class="project-tech">
+                <span>PyTorch</span>
+                <span>MoE</span>
+                <span>RLHF</span>
+                <span>MCP</span>
+                <span>Ray Serve</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/poku0857643/MCP_1221" target="_blank" class="project-link">View Code</a>
+                <button class="project-link design-btn" onclick="openModal('mcp-platform')">View Design</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-image">
+              <img src="./project_images/circlenclick_pixel.svg" alt="CircleNClick">
+            </div>
+            <div class="project-content">
+              <h4>CircleNClick - Misinformation Detector</h4>
+              <p>Browser extension for detecting misinformation and fake news on social media. Uses ML-powered semantic matching with sentence transformers and multi-source fact-checking APIs.</p>
+              <div class="project-tech">
+                <span>Transformers</span>
+                <span>FastAPI</span>
+                <span>Browser Extension</span>
+                <span>NLP</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/poku0857643/circlenclick" target="_blank" class="project-link">View Code</a>
+                <button class="project-link design-btn" onclick="openModal('circlenclick')">View Design</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-image">
+              <img src="./project_images/timeseries_pixel.svg" alt="Time Series Anomaly">
+            </div>
+            <div class="project-content">
+              <h4>Time-Series Anomaly Prediction</h4>
+              <p>Real-time anomaly detection system for time-series data using statistical and ML approaches. Features ARIMA/Prophet models with automated drift detection and alerting.</p>
+              <div class="project-tech">
+                <span>Prophet</span>
+                <span>ARIMA</span>
+                <span>FastAPI</span>
+                <span>SQLite</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="project-link">View Code</a>
+                <button class="project-link design-btn" onclick="openModal('timeseries')">View Design</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="project-category">
+        <h3 class="category-title">Biomedical AI</h3>
+        <div class="projects-grid">
+
+          <div class="project-card">
+            <div class="project-image">
+              <img src="./project_images/bloodpressure_pixel.svg" alt="Blood Pressure Estimator">
+            </div>
+            <div class="project-content">
+              <h4>Blood Pressure Estimator</h4>
+              <p>Non-invasive blood pressure prediction using PPG and ECG signal fusion. Real-time biosignal processing with deep learning for continuous health monitoring.</p>
+              <div class="project-tech">
+                <span>Signal Processing</span>
+                <span>Deep Learning</span>
+                <span>PPG/ECG</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="project-link">View Code</a>
+                <button class="project-link design-btn" onclick="openModal('blood-pressure')">View Design</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-image">
+              <img src="./project_images/hearttells_pixel.svg" alt="HeartTells">
+            </div>
+            <div class="project-content">
+              <h4>HeartTells - ECG Decision Helper</h4>
+              <p>Innovative decision-making app that analyzes ECG signals from Apple Watch to help users understand their emotional responses to choices. Integrates GPT for logical analysis.</p>
+              <div class="project-tech">
+                <span>Apple Watch</span>
+                <span>ECG Analysis</span>
+                <span>GPT-4</span>
+                <span>Swift</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="project-link">View Code</a>
+                <button class="project-link design-btn" onclick="openModal('hearttells')">View Design</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="project-category">
+        <h3 class="category-title">Full-Stack Applications</h3>
+        <div class="projects-grid">
+
+          <div class="project-card">
+            <div class="project-image">
+              <img src="./project_images/citystroll_pixel.svg" alt="City Stroll Recommendation">
+            </div>
+            <div class="project-content">
+              <h4>City Stroll Recommendation System</h4>
+              <p>Personalized food and drink spot recommendations based on walking routes. Uses Google Maps API with ML-powered suggestions and real-time location updates.</p>
+              <div class="project-tech">
+                <span>FastAPI</span>
+                <span>React</span>
+                <span>Google Maps</span>
+                <span>Swift</span>
+                <span>GPT-4</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="project-link">View Code</a>
+                <button class="project-link design-btn" onclick="openModal('city-stroll')">View Design</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-image">
+              <img src="./project_images/chatsearch_pixel.svg" alt="Cross-National Chat Search">
+            </div>
+            <div class="project-content">
+              <h4>Cross-National Chat Search</h4>
+              <p>Multilingual search engine with Named Entity Recognition supporting English and Chinese. Semantic search with advanced NLP processing.</p>
+              <div class="project-tech">
+                <span>NER</span>
+                <span>Multilingual NLP</span>
+                <span>Search Engine</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="project-link">View Code</a>
+                <button class="project-link design-btn" onclick="openModal('chat-search')">View Design</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="project-category">
+        <h3 class="category-title">MLOps & Developer Tools</h3>
+        <div class="projects-grid">
+
+          <div class="project-card">
+            <div class="project-content">
+              <h4>Auto Drift Detection CI/CD</h4>
+              <p>Automated ML model drift detection integrated with CI/CD pipelines. Monitors model performance and triggers retraining when data drift is detected.</p>
+              <div class="project-tech">
+                <span>GitHub Actions</span>
+                <span>Drift Detection</span>
+                <span>CI/CD</span>
+                <span>MLOps</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="project-link">View Code</a>
+                <button class="project-link design-btn" onclick="openModal('drift-detection')">View Design</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-content">
+              <h4>CLI Auto Model Trainer</h4>
+              <p>Command-line tool for automated machine learning model training. Supports hyperparameter tuning, model selection, and experiment tracking.</p>
+              <div class="project-tech">
+                <span>CLI</span>
+                <span>AutoML</span>
+                <span>Python</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="project-link">View Code</a>
+                <button class="project-link design-btn" onclick="openModal('cli-trainer')">View Design</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2 class="section-title">Get In Touch</h2>
+      <p class="contact-text">
+        Interested in collaborating or have a project in mind? Let's connect.
+      </p>
+      <div class="contact-links">
+        <a href="https://github.com/poku0857643" target="_blank" class="contact-link">
+          <svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          GitHub
+        </a>
+        <a href="https://linkedin.com/in/YOUR_LINKEDIN" target="_blank" class="contact-link">
+          <svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
+        <a href="mailto:your.email@example.com" class="contact-link">
+          <svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          Email
+        </a>
+        <a href="https://medium.com/@YOUR_MEDIUM" target="_blank" class="contact-link">
+          <svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg>
+          Medium
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Lucy. Built with passion for AI and engineering.</p>
+    </div>
+  </footer>
+
+  <!-- Architecture Modal -->
+  <div id="design-modal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="modal-title">System Architecture</h3>
+        <button class="modal-close" onclick="closeModal()">&times;</button>
+      </div>
+      <div class="modal-body" id="modal-body">
+        <!-- Architecture content will be inserted here -->
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Architecture data for each project
+    const architectures = {
+      'rag-chatbot': {
+        title: 'RAG Chatbot - System Architecture',
+        content: `
+          <div class="arch-diagram">
+            <div class="arch-section">
+              <h4>High-Level Architecture</h4>
+              <pre class="arch-code">
+┌─────────────────────────────────────────────────────────────────┐
+│                    Frontend (React + Vite)                       │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐          │
+│  │  Chat UI     │  │  File Upload │  │  Markdown    │          │
+│  │  Component   │  │  Component   │  │  Renderer    │          │
+│  └──────┬───────┘  └──────┬───────┘  └──────────────┘          │
+└─────────┼─────────────────┼─────────────────────────────────────┘
+          │ SSE Stream      │ POST
+          ▼                 ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                    FastAPI Backend                               │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐          │
+│  │  /api/chat   │  │  /api/upload │  │  /api/health │          │
+│  │  (streaming) │  │  (multipart) │  │              │          │
+│  └──────┬───────┘  └──────┬───────┘  └──────────────┘          │
+│         │                 │                                      │
+│         ▼                 ▼                                      │
+│  ┌─────────────────────────────────────────────────────────┐    │
+│  │                   RAG Pipeline                           │    │
+│  │  ┌─────────┐  ┌─────────┐  ┌─────────┐  ┌─────────┐    │    │
+│  │  │ Query   │─▶│ Embed   │─▶│ Search  │─▶│ Augment │    │    │
+│  │  │         │  │ (768d)  │  │ (FAISS) │  │ Context │    │    │
+│  │  └─────────┘  └─────────┘  └─────────┘  └────┬────┘    │    │
+│  └──────────────────────────────────────────────┼──────────┘    │
+│                                                  │               │
+│  ┌──────────────────────────────────────────────┼──────────┐    │
+│  │              Document Processor              │          │    │
+│  │  ┌─────────┐  ┌─────────┐  ┌─────────┐      │          │    │
+│  │  │  PDF    │  │  DOCX   │  │  TXT    │      │          │    │
+│  │  │ Parser  │  │ Parser  │  │ Parser  │      │          │    │
+│  │  └────┬────┘  └────┬────┘  └────┬────┘      │          │    │
+│  │       └────────────┼───────────┘            │          │    │
+│  │                    ▼                        │          │    │
+│  │            ┌─────────────┐                  │          │    │
+│  │            │  Chunking   │ (500 words)      │          │    │
+│  │            │  + Overlap  │ (50 overlap)     │          │    │
+│  │            └─────────────┘                  │          │    │
+│  └─────────────────────────────────────────────┼──────────┘    │
+└────────────────────────────────────────────────┼────────────────┘
+                                                 │
+                                                 ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                    External Services                             │
+│  ┌──────────────────────┐  ┌──────────────────────┐            │
+│  │    Gemini AI API     │  │   FAISS Vector DB    │            │
+│  │  • text-embedding-004│  │   (In-Memory)        │            │
+│  │  • gemini-2.5-flash  │  │   768-dim vectors    │            │
+│  └──────────────────────┘  └──────────────────────┘            │
+└─────────────────────────────────────────────────────────────────┘</pre>
+            </div>
+            <div class="arch-section">
+              <h4>Key Components</h4>
+              <ul class="arch-list">
+                <li><strong>SSE Streaming:</strong> Real-time word-by-word response with &lt;100ms first token latency</li>
+                <li><strong>FAISS Vector Store:</strong> Semantic similarity search with 768-dimensional embeddings</li>
+                <li><strong>Document Processing:</strong> PDF, DOCX, TXT support with intelligent chunking</li>
+                <li><strong>Rate Limiting:</strong> 10 chat/min, 5 uploads/min, 10K tokens/day per IP</li>
+              </ul>
+            </div>
+          </div>
+        `
+      },
+      'mcp-platform': {
+        title: 'MCP ML Platform - System Architecture',
+        content: `
+          <div class="arch-diagram">
+            <div class="arch-section">
+              <h4>High-Level Architecture</h4>
+              <pre class="arch-code">
+┌─────────────────────────────────────────────────────────────────┐
+│                     Frontend (React)                             │
+│                  Clerk Auth + API Client                         │
+└────────────────────────┬────────────────────────────────────────┘
+                         │ HTTPS (JWT)
+┌────────────────────────┴────────────────────────────────────────┐
+│                      FastAPI Backend                             │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐          │
+│  │ REST API     │  │ MCP Server   │  │ Prediction   │          │
+│  │ /api/v1/*    │  │ /mcp         │  │ Service      │          │
+│  └──────┬───────┘  └──────┬───────┘  └──────┬───────┘          │
+│         │                  │                  │                  │
+│         └──────────────────┴──────────────────┘                  │
+│                            │                                     │
+│         ┌──────────────────┴──────────────────┐                 │
+│         │         Ray Serve Inference          │                 │
+│         │  ┌────────────────────────────────┐ │                 │
+│         │  │     MoE Router (8 Experts)     │ │                 │
+│         │  │  ┌────┐┌────┐┌────┐┌────┐     │ │                 │
+│         │  │  │ E1 ││ E2 ││ E3 ││ E4 │     │ │                 │
+│         │  │  └────┘└────┘└────┘└────┘     │ │                 │
+│         │  │  ┌────┐┌────┐┌────┐┌────┐     │ │                 │
+│         │  │  │ E5 ││ E6 ││ E7 ││ E8 │     │ │                 │
+│         │  │  └────┘└────┘└────┘└────┘     │ │                 │
+│         │  │      ▲ Top-2 Routing ▲        │ │                 │
+│         │  │      └───────┬───────┘        │ │                 │
+│         │  │        Gating Network         │ │                 │
+│         │  └────────────────────────────────┘ │                 │
+│         │                                     │                 │
+│         │  ┌────────────────────────────────┐ │                 │
+│         │  │      RLHF Drift Detector       │ │                 │
+│         │  │  • KS Test  • JS Divergence    │ │                 │
+│         │  │  • Wasserstein Distance        │ │                 │
+│         │  │  • Behavioral Neural Network   │ │                 │
+│         │  └────────────────────────────────┘ │                 │
+│         └─────────────────────────────────────┘                 │
+└────────────────────────┬────────────────────────────────────────┘
+                         │
+┌────────────────────────┴────────────────────────────────────────┐
+│              PostgreSQL + TimescaleDB + Redis                    │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐          │
+│  │ Users        │  │ Predictions  │  │ Experiments  │          │
+│  │ (Auth)       │  │ (Hypertable) │  │ (A/B Tests)  │          │
+│  └──────────────┘  └──────────────┘  └──────────────┘          │
+└─────────────────────────────────────────────────────────────────┘</pre>
+            </div>
+            <div class="arch-section">
+              <h4>MCP Tools Exposed</h4>
+              <ul class="arch-list">
+                <li><strong>predict_complexity:</strong> Analyze question and route to expert</li>
+                <li><strong>analyze_drift:</strong> Detect data drift in predictions</li>
+                <li><strong>get_prediction_history:</strong> Retrieve user's history</li>
+                <li><strong>submit_feedback:</strong> RLHF feedback collection</li>
+                <li><strong>get_expert_stats:</strong> Performance metrics per expert</li>
+              </ul>
+            </div>
+          </div>
+        `
+      },
+      'circlenclick': {
+        title: 'CircleNClick - System Architecture',
+        content: `
+          <div class="arch-diagram">
+            <div class="arch-section">
+              <h4>High-Level Architecture</h4>
+              <pre class="arch-code">
+┌─────────────────────────────────────────────────────────────────┐
+│                 Browser Extension (TypeScript)                   │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐          │
+│  │  Content     │  │  Background  │  │  Popup UI    │          │
+│  │  Scripts     │  │  Service     │  │  + Settings  │          │
+│  │  (FB/X/...)  │  │  Worker      │  │              │          │
+│  └──────┬───────┘  └──────┬───────┘  └──────────────┘          │
+│         │                  │                                     │
+│         │  Circle & Click  │                                     │
+│         │  Visual Select   │                                     │
+│         └────────┬─────────┘                                     │
+│                  │ Native Messaging                              │
+└──────────────────┼──────────────────────────────────────────────┘
+                   │
+┌──────────────────┼──────────────────────────────────────────────┐
+│                  ▼                                               │
+│           Native Messaging Host (Python)                         │
+│  ┌─────────────────────────────────────────────────────────┐    │
+│  │              FastAPI REST API Server                     │    │
+│  │  ┌──────────────────────────────────────────────────┐   │    │
+│  │  │            Verification Engine                    │   │    │
+│  │  │                                                   │   │    │
+│  │  │   ┌─────────────────────────────────────────┐    │   │    │
+│  │  │   │         Hybrid Decisor                   │    │   │    │
+│  │  │   │  Local ◄──────────────────► Cloud        │    │   │    │
+│  │  │   │  (Fast)                    (Comprehensive)│    │   │    │
+│  │  │   └─────────────────────────────────────────┘    │   │    │
+│  │  │                      │                            │   │    │
+│  │  │   ┌─────────────────┴─────────────────┐          │   │    │
+│  │  │   │                                    │          │   │    │
+│  │  │   ▼                                    ▼          │   │    │
+│  │  │  ┌──────────────────┐  ┌──────────────────┐      │   │    │
+│  │  │  │ Local ML Models  │  │  Cloud APIs      │      │   │    │
+│  │  │  │ • Sentence       │  │  • Google Fact   │      │   │    │
+│  │  │  │   Transformers   │  │    Check API     │      │   │    │
+│  │  │  │ • Semantic       │  │  • ClaimBuster   │      │   │    │
+│  │  │  │   Matching       │  │  • Factiverse    │      │   │    │
+│  │  │  │ • 14-claim DB    │  │                  │      │   │    │
+│  │  │  └──────────────────┘  └──────────────────┘      │   │    │
+│  │  └──────────────────────────────────────────────────┘   │    │
+│  └─────────────────────────────────────────────────────────┘    │
+│                              │                                   │
+│  ┌───────────────────────────┴───────────────────────────┐      │
+│  │                    Cache Layer                         │      │
+│  │               (Disk-based, 24h TTL)                    │      │
+│  └────────────────────────────────────────────────────────┘      │
+└─────────────────────────────────────────────────────────────────┘</pre>
+            </div>
+            <div class="arch-section">
+              <h4>Verification Strategies</h4>
+              <ul class="arch-list">
+                <li><strong>Local Only:</strong> 0.5-2s, privacy-first, offline capable</li>
+                <li><strong>Cloud Only:</strong> 5-15s, comprehensive multi-source</li>
+                <li><strong>Hybrid (Default):</strong> 2-8s, balanced accuracy/speed</li>
+              </ul>
+            </div>
+          </div>
+        `
+      },
+      'timeseries': {
+        title: 'Time-Series Anomaly Prediction - System Architecture',
+        content: `
+          <div class="arch-diagram">
+            <div class="arch-section">
+              <h4>High-Level Architecture</h4>
+              <pre class="arch-code">
+┌─────────────────────────────────────────────────────────────────┐
+│                    Data Ingestion Layer                          │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐          │
+│  │  REST API    │  │  Websocket   │  │  File Upload │          │
+│  │  Endpoints   │  │  Stream      │  │  (CSV/JSON)  │          │
+│  └──────┬───────┘  └──────┬───────┘  └──────┬───────┘          │
+└─────────┼─────────────────┼─────────────────┼───────────────────┘
+          │                 │                 │
+          └─────────────────┼─────────────────┘
+                            ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                    FastAPI Backend                               │
+│  ┌─────────────────────────────────────────────────────────┐    │
+│  │              Preprocessing Pipeline                      │    │
+│  │  ┌─────────┐  ┌─────────┐  ┌─────────┐  ┌─────────┐    │    │
+│  │  │ Missing │─▶│ Resample│─▶│ Normalize│─▶│ Feature │    │    │
+│  │  │ Values  │  │ (Time)  │  │ (Z-score)│  │ Extract │    │    │
+│  │  └─────────┘  └─────────┘  └─────────┘  └─────────┘    │    │
+│  └─────────────────────────────────────────────────────────┘    │
+│                              │                                   │
+│  ┌───────────────────────────┴───────────────────────────┐      │
+│  │              Model Ensemble                            │      │
+│  │  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐   │      │
+│  │  │   ARIMA     │  │   Prophet   │  │   LSTM      │   │      │
+│  │  │  Seasonal   │  │  + Holiday  │  │  Autoencoder│   │      │
+│  │  └──────┬──────┘  └──────┬──────┘  └──────┬──────┘   │      │
+│  │         └────────────────┼────────────────┘          │      │
+│  │                          ▼                           │      │
+│  │               ┌─────────────────┐                    │      │
+│  │               │ Ensemble Voting │                    │      │
+│  │               │  (Weighted Avg) │                    │      │
+│  │               └────────┬────────┘                    │      │
+│  └────────────────────────┼─────────────────────────────┘      │
+│                           ▼                                     │
+│  ┌─────────────────────────────────────────────────────────┐    │
+│  │              Anomaly Detection Engine                    │    │
+│  │  ┌──────────────────────────────────────────────────┐   │    │
+│  │  │  Statistical     │  ML-Based      │  Threshold   │   │    │
+│  │  │  • Z-Score       │  • Isolation   │  • Dynamic   │   │    │
+│  │  │  • IQR           │    Forest      │  • Adaptive  │   │    │
+│  │  │  • Grubbs Test   │  • One-Class   │              │   │    │
+│  │  │                  │    SVM         │              │   │    │
+│  │  └──────────────────────────────────────────────────┘   │    │
+│  └─────────────────────────────────────────────────────────┘    │
+│                           │                                     │
+└───────────────────────────┼─────────────────────────────────────┘
+                            ▼
+┌─────────────────────────────────────────────────────────────────┐
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐          │
+│  │   SQLite     │  │  Dashboard   │  │   Alerting   │          │
+│  │   Logging    │  │  Analytics   │  │   (Webhook)  │          │
+│  └──────────────┘  └──────────────┘  └──────────────┘          │
+└─────────────────────────────────────────────────────────────────┘</pre>
+            </div>
+            <div class="arch-section">
+              <h4>Detection Methods</h4>
+              <ul class="arch-list">
+                <li><strong>Statistical:</strong> Z-Score, IQR, Grubbs Test for outliers</li>
+                <li><strong>ML-Based:</strong> Isolation Forest, One-Class SVM</li>
+                <li><strong>Forecasting:</strong> ARIMA, Prophet with confidence intervals</li>
+                <li><strong>Drift Detection:</strong> KS Test, ADWIN for concept drift</li>
+              </ul>
+            </div>
+          </div>
+        `
+      },
+      'blood-pressure': {
+        title: 'Blood Pressure Estimator - System Architecture',
+        content: `
+          <div class="arch-diagram">
+            <div class="arch-section">
+              <h4>Signal Processing Pipeline</h4>
+              <pre class="arch-code">
+┌─────────────────────────────────────────────────────────────────┐
+│                    Sensor Data Acquisition                       │
+│  ┌──────────────────────┐  ┌──────────────────────┐            │
+│  │     PPG Sensor       │  │     ECG Sensor       │            │
+│  │  (Photoplethysmogram)│  │  (Electrocardiogram) │            │
+│  │  • 100-500 Hz        │  │  • 250-1000 Hz       │            │
+│  └──────────┬───────────┘  └──────────┬───────────┘            │
+└─────────────┼──────────────────────────┼────────────────────────┘
+              │                          │
+              ▼                          ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                    Signal Preprocessing                          │
+│  ┌─────────────────────────────────────────────────────────┐    │
+│  │  ┌─────────┐  ┌─────────┐  ┌─────────┐  ┌─────────┐    │    │
+│  │  │ Bandpass│─▶│ Detrend │─▶│ Normalize│─▶│ Segment │    │    │
+│  │  │ Filter  │  │         │  │         │  │ (5-10s) │    │    │
+│  │  └─────────┘  └─────────┘  └─────────┘  └─────────┘    │    │
+│  └─────────────────────────────────────────────────────────┘    │
+│                              │                                   │
+│  ┌───────────────────────────┴───────────────────────────┐      │
+│  │              Feature Extraction                        │      │
+│  │  ┌────────────────┐  ┌────────────────┐               │      │
+│  │  │ PPG Features   │  │ ECG Features   │               │      │
+│  │  │ • PTT          │  │ • R-R Interval │               │      │
+│  │  │ • Pulse Width  │  │ • QRS Duration │               │      │
+│  │  │ • Amplitude    │  │ • Heart Rate   │               │      │
+│  │  │ • Area Under   │  │ • HRV Metrics  │               │      │
+│  │  │   Curve        │  │                │               │      │
+│  │  └───────┬────────┘  └───────┬────────┘               │      │
+│  │          └───────────────────┘                        │      │
+│  │                      │                                │      │
+│  │                      ▼                                │      │
+│  │          ┌─────────────────────┐                      │      │
+│  │          │   Signal Fusion     │                      │      │
+│  │          │   (PTT Calculation) │                      │      │
+│  │          └──────────┬──────────┘                      │      │
+│  └─────────────────────┼─────────────────────────────────┘      │
+│                        ▼                                        │
+│  ┌─────────────────────────────────────────────────────────┐    │
+│  │              Deep Learning Model                         │    │
+│  │  ┌──────────────────────────────────────────────────┐   │    │
+│  │  │              1D-CNN + LSTM                        │   │    │
+│  │  │  ┌─────────┐  ┌─────────┐  ┌─────────┐          │   │    │
+│  │  │  │ Conv1D  │─▶│  LSTM   │─▶│  Dense  │          │   │    │
+│  │  │  │ Layers  │  │ Layers  │  │ (BP Out)│          │   │    │
+│  │  │  └─────────┘  └─────────┘  └─────────┘          │   │    │
+│  │  │                              │                   │   │    │
+│  │  │                    ┌─────────┴─────────┐        │   │    │
+│  │  │                    ▼                   ▼        │   │    │
+│  │  │              ┌──────────┐        ┌──────────┐   │   │    │
+│  │  │              │ Systolic │        │ Diastolic│   │   │    │
+│  │  │              │ BP (mmHg)│        │ BP (mmHg)│   │   │    │
+│  │  │              └──────────┘        └──────────┘   │   │    │
+│  │  └──────────────────────────────────────────────────┘   │    │
+│  └─────────────────────────────────────────────────────────┘    │
+└─────────────────────────────────────────────────────────────────┘</pre>
+            </div>
+            <div class="arch-section">
+              <h4>Key Metrics</h4>
+              <ul class="arch-list">
+                <li><strong>PTT (Pulse Transit Time):</strong> Time between R-peak and PPG pulse</li>
+                <li><strong>Accuracy Target:</strong> MAE &lt; 5 mmHg for systolic, &lt; 3 mmHg for diastolic</li>
+                <li><strong>Real-time:</strong> Continuous monitoring with 5-10s windows</li>
+              </ul>
+            </div>
+          </div>
+        `
+      },
+      'hearttells': {
+        title: 'HeartTells - System Architecture',
+        content: `
+          <div class="arch-diagram">
+            <div class="arch-section">
+              <h4>High-Level Architecture</h4>
+              <pre class="arch-code">
+┌─────────────────────────────────────────────────────────────────┐
+│                    Apple Watch Layer                             │
+│  ┌──────────────────────────────────────────────────────────┐   │
+│  │  ECG Sensor ──▶ ECG App ──▶ HKElectrocardiogram          │   │
+│  └──────────────────────────────────────────────────────────┘   │
+└────────────────────────────┬────────────────────────────────────┘
+                             │ Bluetooth Sync
+┌────────────────────────────┴────────────────────────────────────┐
+│                    HealthKit Layer (iPhone)                      │
+│  ┌──────────────────────────────────────────────────────────┐   │
+│  │  HKElectrocardiogram Data ──▶ Health App Storage          │   │
+│  └──────────────────────────────────────────────────────────┘   │
+└────────────────────────────┬────────────────────────────────────┘
+                             │
+┌────────────────────────────┴────────────────────────────────────┐
+│                    iOS App Layer (Swift)                         │
+│  ┌─────────────────────────────────────────────────────────┐    │
+│  │  HKObserverQuery ──▶ Detect new ECG recordings           │    │
+│  │  HKSampleQuery ──▶ Fetch metadata                        │    │
+│  │  HKElectrocardiogramQuery ──▶ Stream voltage samples     │    │
+│  └─────────────────────────────────────────────────────────┘    │
+│                              │                                   │
+│  ┌───────────────────────────┴───────────────────────────┐      │
+│  │              ECG Processing Pipeline                   │      │
+│  │  ┌─────────┐  ┌─────────┐  ┌─────────┐               │      │
+│  │  │ Preproc │─▶│ Segment │─▶│ Resample│               │      │
+│  │  │ Filter  │  │ (2-sec) │  │ (Fixed N)│               │      │
+│  │  └─────────┘  └─────────┘  └─────────┘               │      │
+│  │                              │                        │      │
+│  │                              ▼                        │      │
+│  │              ┌─────────────────────────┐             │      │
+│  │              │  1D-CNN Embedding Model │             │      │
+│  │              │  (Core ML on Device)    │             │      │
+│  │              └───────────┬─────────────┘             │      │
+│  └──────────────────────────┼────────────────────────────┘      │
+│                             ▼                                    │
+│  ┌─────────────────────────────────────────────────────────┐    │
+│  │              Decision Analysis Engine                    │    │
+│  │                                                          │    │
+│  │    Decision 1           Decision 2                      │    │
+│  │  ┌──────────┐         ┌──────────┐                      │    │
+│  │  │ECG Embed │         │ECG Embed │                      │    │
+│  │  │ Segment  │         │ Segment  │                      │    │
+│  │  └────┬─────┘         └────┬─────┘                      │    │
+│  │       └─────────┬──────────┘                            │    │
+│  │                 ▼                                       │    │
+│  │    ┌────────────────────────┐                          │    │
+│  │    │ Similarity Computation │                          │    │
+│  │    │ + Sentiment Mapping    │                          │    │
+│  │    └───────────┬────────────┘                          │    │
+│  └────────────────┼─────────────────────────────────────────┘    │
+└───────────────────┼─────────────────────────────────────────────┘
+                    ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                    FastAPI Backend (GCP)                         │
+│  ┌──────────────────────┐  ┌──────────────────────┐            │
+│  │  ChatGPT Integration │  │  PostgreSQL DB       │            │
+│  │  • Logic Analysis    │  │  • User Profiles     │            │
+│  │  • Decision Summary  │  │  • ECG Templates     │            │
+│  │  • Sentiment Balance │  │  • Decision History  │            │
+│  └──────────────────────┘  └──────────────────────┘            │
+└─────────────────────────────────────────────────────────────────┘</pre>
+            </div>
+            <div class="arch-section">
+              <h4>Emotional States Detected</h4>
+              <ul class="arch-list">
+                <li><strong>Highly Positive:</strong> Strong excitement/enthusiasm in ECG pattern</li>
+                <li><strong>Positive:</strong> Calm confidence, steady rhythm</li>
+                <li><strong>Neutral:</strong> Baseline state, no strong emotional response</li>
+                <li><strong>Negative:</strong> Stress/anxiety indicators in HRV</li>
+              </ul>
+            </div>
+          </div>
+        `
+      },
+      'city-stroll': {
+        title: 'City Stroll Recommendation - System Architecture',
+        content: `
+          <div class="arch-diagram">
+            <div class="arch-section">
+              <h4>High-Level Architecture</h4>
+              <pre class="arch-code">
+┌─────────────────────────────────────────────────────────────────┐
+│                    Client Applications                           │
+│  ┌──────────────────────┐  ┌──────────────────────┐            │
+│  │   React Web App      │  │   iOS App (Swift)    │            │
+│  │   • Route Planning   │  │   • GPS Tracking     │            │
+│  │   • Map Interface    │  │   • Push Notifications│            │
+│  │   • Preferences UI   │  │   • Offline Mode     │            │
+│  └──────────┬───────────┘  └──────────┬───────────┘            │
+└─────────────┼──────────────────────────┼────────────────────────┘
+              │                          │
+              └────────────┬─────────────┘
+                           │ REST API / GraphQL
+┌──────────────────────────┴──────────────────────────────────────┐
+│                    FastAPI Backend                               │
+│  ┌─────────────────────────────────────────────────────────┐    │
+│  │                    API Gateway                           │    │
+│  │  ┌─────────┐  ┌─────────┐  ┌─────────┐  ┌─────────┐    │    │
+│  │  │ Auth    │  │ Routes  │  │ Spots   │  │ Prefs   │    │    │
+│  │  │ (JWT)   │  │ Service │  │ Service │  │ Service │    │    │
+│  │  └─────────┘  └─────────┘  └─────────┘  └─────────┘    │    │
+│  └─────────────────────────────────────────────────────────┘    │
+│                              │                                   │
+│  ┌───────────────────────────┴───────────────────────────┐      │
+│  │              Recommendation Engine                     │      │
+│  │  ┌─────────────────────────────────────────────────┐  │      │
+│  │  │            GPT-4 Integration                     │  │      │
+│  │  │  • Natural Language Preferences                  │  │      │
+│  │  │  • Context-Aware Suggestions                     │  │      │
+│  │  │  • Personalized Descriptions                     │  │      │
+│  │  └─────────────────────────────────────────────────┘  │      │
+│  │                              │                        │      │
+│  │  ┌──────────────────────────┴──────────────────────┐ │      │
+│  │  │              ML Ranking Model                    │ │      │
+│  │  │  ┌──────────┐  ┌──────────┐  ┌──────────┐      │ │      │
+│  │  │  │ User     │  │ Location │  │ Time/    │      │ │      │
+│  │  │  │ Prefs    │  │ Context  │  │ Weather  │      │ │      │
+│  │  │  └────┬─────┘  └────┬─────┘  └────┬─────┘      │ │      │
+│  │  │       └─────────────┼─────────────┘            │ │      │
+│  │  │                     ▼                          │ │      │
+│  │  │          ┌─────────────────────┐               │ │      │
+│  │  │          │  Ranking Score      │               │ │      │
+│  │  │          │  (Personalized)     │               │ │      │
+│  │  │          └─────────────────────┘               │ │      │
+│  │  └────────────────────────────────────────────────┘ │      │
+│  └─────────────────────────────────────────────────────┘      │
+│                              │                                   │
+└──────────────────────────────┼──────────────────────────────────┘
+                               │
+┌──────────────────────────────┴──────────────────────────────────┐
+│                    External Services & Data                      │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐          │
+│  │ Google Maps  │  │ PostgreSQL   │  │    Redis     │          │
+│  │ Places API   │  │ (GCP)        │  │   (Cache)    │          │
+│  │ • Nearby     │  │ • Users      │  │ • Sessions   │          │
+│  │ • Details    │  │ • Favorites  │  │ • Geo Cache  │          │
+│  │ • Photos     │  │ • Routes     │  │              │          │
+│  └──────────────┘  └──────────────┘  └──────────────┘          │
+└─────────────────────────────────────────────────────────────────┘</pre>
+            </div>
+            <div class="arch-section">
+              <h4>Recommendation Modes</h4>
+              <ul class="arch-list">
+                <li><strong>Route-Based:</strong> Suggestions along planned walking path</li>
+                <li><strong>Location-Based:</strong> Nearby spots from current position</li>
+                <li><strong>Preference-Driven:</strong> ML-ranked by user taste profile</li>
+                <li><strong>Real-time Updates:</strong> Dynamic suggestions as you walk</li>
+              </ul>
+            </div>
+          </div>
+        `
+      },
+      'chat-search': {
+        title: 'Cross-National Chat Search - System Architecture',
+        content: `
+          <div class="arch-diagram">
+            <div class="arch-section">
+              <h4>High-Level Architecture</h4>
+              <pre class="arch-code">
+┌─────────────────────────────────────────────────────────────────┐
+│                    Search Interface                              │
+│  ┌──────────────────────────────────────────────────────────┐   │
+│  │  Query Input ──▶ Language Detection ──▶ Query Processing  │   │
+│  │                  (EN / ZH / Auto)                         │   │
+│  └──────────────────────────────────────────────────────────┘   │
+└────────────────────────────┬────────────────────────────────────┘
+                             │
+┌────────────────────────────┴────────────────────────────────────┐
+│                    NLP Processing Pipeline                       │
+│  ┌─────────────────────────────────────────────────────────┐    │
+│  │              Named Entity Recognition (NER)              │    │
+│  │  ┌──────────────────┐  ┌──────────────────┐            │    │
+│  │  │ English NER      │  │ Chinese NER      │            │    │
+│  │  │ • spaCy en_core  │  │ • spaCy zh_core  │            │    │
+│  │  │ • Custom entities│  │ • Custom entities│            │    │
+│  │  │ • PERSON, ORG    │  │ • 人名, 组织      │            │    │
+│  │  │ • LOCATION, DATE │  │ • 地点, 日期      │            │    │
+│  │  └────────┬─────────┘  └────────┬─────────┘            │    │
+│  │           └─────────────────────┘                       │    │
+│  │                      │                                  │    │
+│  │                      ▼                                  │    │
+│  │  ┌──────────────────────────────────────────────────┐  │    │
+│  │  │           Entity Linking & Resolution             │  │    │
+│  │  │  • Cross-lingual entity matching                  │  │    │
+│  │  │  • Alias resolution                               │  │    │
+│  │  │  • Knowledge base linking                         │  │    │
+│  │  └──────────────────────────────────────────────────┘  │    │
+│  └─────────────────────────────────────────────────────────┘    │
+│                              │                                   │
+│  ┌───────────────────────────┴───────────────────────────┐      │
+│  │              Semantic Search Engine                    │      │
+│  │  ┌─────────────────────────────────────────────────┐  │      │
+│  │  │         Multilingual Embeddings                  │  │      │
+│  │  │  ┌─────────────────────────────────────────┐    │  │      │
+│  │  │  │   Sentence Transformers                  │    │  │      │
+│  │  │  │   (paraphrase-multilingual-MiniLM)      │    │  │      │
+│  │  │  └─────────────────────────────────────────┘    │  │      │
+│  │  │                      │                           │  │      │
+│  │  │                      ▼                           │  │      │
+│  │  │  ┌────────────────────────────────────────────┐ │  │      │
+│  │  │  │  Vector Similarity Search                  │ │  │      │
+│  │  │  │  • FAISS Index                             │ │  │      │
+│  │  │  │  • Cross-lingual retrieval                 │ │  │      │
+│  │  │  └────────────────────────────────────────────┘ │  │      │
+│  │  └─────────────────────────────────────────────────┘  │      │
+│  └───────────────────────────────────────────────────────┘      │
+│                              │                                   │
+└──────────────────────────────┼──────────────────────────────────┘
+                               │
+┌──────────────────────────────┴──────────────────────────────────┐
+│                    Results & Ranking                             │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐          │
+│  │ BM25 Score   │  │ Semantic     │  │ Entity       │          │
+│  │ (Keyword)    │  │ Similarity   │  │ Boost        │          │
+│  └──────┬───────┘  └──────┬───────┘  └──────┬───────┘          │
+│         └─────────────────┼─────────────────┘                   │
+│                           ▼                                      │
+│              ┌─────────────────────────┐                        │
+│              │  Hybrid Ranking Score   │                        │
+│              │  + Snippet Generation   │                        │
+│              └─────────────────────────┘                        │
+└─────────────────────────────────────────────────────────────────┘</pre>
+            </div>
+            <div class="arch-section">
+              <h4>Search Features</h4>
+              <ul class="arch-list">
+                <li><strong>Cross-lingual:</strong> Search in English, get Chinese results (and vice versa)</li>
+                <li><strong>NER-Enhanced:</strong> Entity-aware search ranking</li>
+                <li><strong>Hybrid Ranking:</strong> BM25 + Semantic similarity</li>
+              </ul>
+            </div>
+          </div>
+        `
+      },
+      'drift-detection': {
+        title: 'Auto Drift Detection CI/CD - System Architecture',
+        content: `
+          <div class="arch-diagram">
+            <div class="arch-section">
+              <h4>CI/CD Pipeline Architecture</h4>
+              <pre class="arch-code">
+┌─────────────────────────────────────────────────────────────────┐
+│                    GitHub Repository                             │
+│  ┌──────────────────────────────────────────────────────────┐   │
+│  │  Push / PR ──▶ GitHub Actions Workflow Trigger            │   │
+│  └──────────────────────────────────────────────────────────┘   │
+└────────────────────────────┬────────────────────────────────────┘
+                             │
+┌────────────────────────────┴────────────────────────────────────┐
+│                    GitHub Actions Workflow                       │
+│  ┌─────────────────────────────────────────────────────────┐    │
+│  │                    Pipeline Stages                       │    │
+│  │                                                          │    │
+│  │  ┌─────────┐  ┌─────────┐  ┌─────────┐  ┌─────────┐    │    │
+│  │  │  Build  │─▶│  Test   │─▶│  Drift  │─▶│ Deploy  │    │    │
+│  │  │         │  │         │  │  Check  │  │         │    │    │
+│  │  └─────────┘  └─────────┘  └────┬────┘  └─────────┘    │    │
+│  │                                 │                       │    │
+│  └─────────────────────────────────┼───────────────────────┘    │
+│                                    │                             │
+│  ┌─────────────────────────────────┴───────────────────────┐    │
+│  │              Drift Detection Module                      │    │
+│  │                                                          │    │
+│  │  ┌─────────────────────────────────────────────────┐    │    │
+│  │  │           Data Distribution Check                │    │    │
+│  │  │  ┌──────────┐  ┌──────────┐  ┌──────────┐      │    │    │
+│  │  │  │ KS Test  │  │ Chi-Sq   │  │ PSI      │      │    │    │
+│  │  │  │ (Cont.)  │  │ (Categ.) │  │ (Stabil.)│      │    │    │
+│  │  │  └──────────┘  └──────────┘  └──────────┘      │    │    │
+│  │  └─────────────────────────────────────────────────┘    │    │
+│  │                         │                                │    │
+│  │  ┌─────────────────────┴───────────────────────────┐    │    │
+│  │  │           Model Performance Check                │    │    │
+│  │  │  ┌──────────────────────────────────────────┐   │    │    │
+│  │  │  │  Current Model vs. Baseline Metrics       │   │    │    │
+│  │  │  │  • Accuracy Delta                         │   │    │    │
+│  │  │  │  • F1 Score Delta                         │   │    │    │
+│  │  │  │  • AUC-ROC Delta                          │   │    │    │
+│  │  │  └──────────────────────────────────────────┘   │    │    │
+│  │  └──────────────────────────────────────────────────┘    │    │
+│  │                         │                                │    │
+│  │  ┌─────────────────────┴───────────────────────────┐    │    │
+│  │  │              Decision Engine                     │    │    │
+│  │  │                                                  │    │    │
+│  │  │   Drift Detected?                                │    │    │
+│  │  │         │                                        │    │    │
+│  │  │    ┌────┴────┐                                   │    │    │
+│  │  │    ▼         ▼                                   │    │    │
+│  │  │   YES        NO                                  │    │    │
+│  │  │    │         │                                   │    │    │
+│  │  │    ▼         ▼                                   │    │    │
+│  │  │ ┌──────┐  ┌──────┐                              │    │    │
+│  │  │ │Alert │  │Deploy│                              │    │    │
+│  │  │ │Retrain│ │Prod  │                              │    │    │
+│  │  │ └──────┘  └──────┘                              │    │    │
+│  │  └──────────────────────────────────────────────────┘    │    │
+│  └──────────────────────────────────────────────────────────┘    │
+└─────────────────────────────────────────────────────────────────┘
+                             │
+┌────────────────────────────┴────────────────────────────────────┐
+│                    Automated Actions                             │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐          │
+│  │ Slack/Email  │  │ Auto Retrain │  │ Rollback     │          │
+│  │ Notification │  │ Pipeline     │  │ Previous Ver │          │
+│  └──────────────┘  └──────────────┘  └──────────────┘          │
+└─────────────────────────────────────────────────────────────────┘</pre>
+            </div>
+            <div class="arch-section">
+              <h4>Drift Detection Methods</h4>
+              <ul class="arch-list">
+                <li><strong>Statistical Tests:</strong> KS Test, Chi-Square, PSI</li>
+                <li><strong>Performance Monitoring:</strong> Accuracy, F1, AUC-ROC delta</li>
+                <li><strong>Automated Response:</strong> Alert, retrain, or rollback</li>
+              </ul>
+            </div>
+          </div>
+        `
+      },
+      'cli-trainer': {
+        title: 'CLI Auto Model Trainer - System Architecture',
+        content: `
+          <div class="arch-diagram">
+            <div class="arch-section">
+              <h4>CLI Tool Architecture</h4>
+              <pre class="arch-code">
+┌─────────────────────────────────────────────────────────────────┐
+│                    CLI Interface (Click/Typer)                   │
+│  ┌──────────────────────────────────────────────────────────┐   │
+│  │  $ autotrainer train --config config.yaml                 │   │
+│  │  $ autotrainer tune --trials 100                          │   │
+│  │  $ autotrainer evaluate --model best_model.pkl            │   │
+│  │  $ autotrainer deploy --target gcp                        │   │
+│  └──────────────────────────────────────────────────────────┘   │
+└────────────────────────────┬────────────────────────────────────┘
+                             │
+┌────────────────────────────┴────────────────────────────────────┐
+│                    Core Training Engine                          │
+│                                                                  │
+│  ┌─────────────────────────────────────────────────────────┐    │
+│  │              Configuration Parser (YAML/JSON)            │    │
+│  │  • Data paths          • Model selection                 │    │
+│  │  • Feature engineering • Hyperparameter space            │    │
+│  │  • Training params     • Evaluation metrics              │    │
+│  └─────────────────────────────────────────────────────────┘    │
+│                              │                                   │
+│  ┌───────────────────────────┴───────────────────────────┐      │
+│  │              Data Pipeline                             │      │
+│  │  ┌─────────┐  ┌─────────┐  ┌─────────┐              │      │
+│  │  │  Load   │─▶│ Validate│─▶│ Feature │              │      │
+│  │  │  Data   │  │ Schema  │  │ Engineer│              │      │
+│  │  └─────────┘  └─────────┘  └─────────┘              │      │
+│  │                              │                       │      │
+│  │                              ▼                       │      │
+│  │              ┌─────────────────────────┐            │      │
+│  │              │  Train/Val/Test Split   │            │      │
+│  │              └─────────────────────────┘            │      │
+│  └───────────────────────────────────────────────────────┘      │
+│                              │                                   │
+│  ┌───────────────────────────┴───────────────────────────┐      │
+│  │              AutoML Module                             │      │
+│  │                                                        │      │
+│  │  ┌─────────────────────────────────────────────────┐  │      │
+│  │  │         Hyperparameter Tuning (Optuna)           │  │      │
+│  │  │  ┌──────────┐  ┌──────────┐  ┌──────────┐      │  │      │
+│  │  │  │ Bayesian │  │ Grid     │  │ Random   │      │  │      │
+│  │  │  │ Optim    │  │ Search   │  │ Search   │      │  │      │
+│  │  │  └──────────┘  └──────────┘  └──────────┘      │  │      │
+│  │  └─────────────────────────────────────────────────┘  │      │
+│  │                              │                        │      │
+│  │  ┌──────────────────────────┴──────────────────────┐ │      │
+│  │  │              Model Zoo                           │ │      │
+│  │  │  ┌──────┐ ┌──────┐ ┌──────┐ ┌──────┐ ┌──────┐ │ │      │
+│  │  │  │ XGB  │ │ LGB  │ │ RF   │ │ SVM  │ │ NN   │ │ │      │
+│  │  │  └──────┘ └──────┘ └──────┘ └──────┘ └──────┘ │ │      │
+│  │  └──────────────────────────────────────────────────┘ │      │
+│  └───────────────────────────────────────────────────────┘      │
+│                              │                                   │
+│  ┌───────────────────────────┴───────────────────────────┐      │
+│  │              Experiment Tracking (MLflow/W&B)          │      │
+│  │  • Metrics logging        • Model versioning           │      │
+│  │  • Artifact storage       • Comparison dashboard       │      │
+│  └───────────────────────────────────────────────────────┘      │
+└─────────────────────────────────────────────────────────────────┘
+                             │
+┌────────────────────────────┴────────────────────────────────────┐
+│                    Output & Deployment                           │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐          │
+│  │ Best Model   │  │ Metrics      │  │ Deploy       │          │
+│  │ (Pickle/ONNX)│  │ Report (HTML)│  │ Script       │          │
+│  └──────────────┘  └──────────────┘  └──────────────┘          │
+└─────────────────────────────────────────────────────────────────┘</pre>
+            </div>
+            <div class="arch-section">
+              <h4>CLI Commands</h4>
+              <ul class="arch-list">
+                <li><strong>train:</strong> Train model with config file</li>
+                <li><strong>tune:</strong> Hyperparameter optimization with Optuna</li>
+                <li><strong>evaluate:</strong> Generate evaluation report</li>
+                <li><strong>deploy:</strong> Export and deploy to cloud</li>
+              </ul>
+            </div>
+          </div>
+        `
+      }
+    };
+
+    // Modal functions
+    function openModal(projectId) {
+      const modal = document.getElementById('design-modal');
+      const modalTitle = document.getElementById('modal-title');
+      const modalBody = document.getElementById('modal-body');
+
+      const arch = architectures[projectId];
+      if (arch) {
+        modalTitle.textContent = arch.title;
+        modalBody.innerHTML = arch.content;
+      }
+
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('design-modal');
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    // Close modal on outside click
+    document.getElementById('design-modal').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeModal();
+      }
+    });
+
+    // Close modal on Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeModal();
+      }
+    });
+
+    // Smooth scrolling for navigation
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+  </script>
 </body>
 </html>
