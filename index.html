@@ -23,10 +23,10 @@
   <header class="hero">
     <canvas id="sequin-canvas"></canvas>
     <div class="hero-content">
-      <p class="hero-tag">Platform-oriented AI Engineer</p>
-      <h1>Make Scaled Systems<br/>That Elegant</h1>
+      <p class="hero-tag">AI Systems Engineer &amp; Agent Developer</p>
+      <h1>Engineering Intelligence<br/>From Signal to Scale</h1>
       <p class="hero-subtitle">
-        Specializing in ML systems, LLM applications, biomedical AI, and production-ready full-stack solutions.
+        Autonomous agents, production RAG, real-time biosignal AI, and compound LLM systems — built to hold under clinical and enterprise load.
       </p>
       <div class="hero-cta">
         <a href="#projects" class="btn btn-primary">View Projects</a>
@@ -41,13 +41,13 @@
       <div class="about-content">
         <div class="about-text">
           <p>
-            I am an AI Engineer with a cross-disciplinary foundation in machine learning, biomedical research, and system architecture. My expertise lies in building scalable AI systems—from time-series forecasting tools and recommendation engines to fine-tuned large language models and real-time biosignal analysis platforms.
+            I build production-grade AI systems at the intersection of intelligent agents, biomedical signals, and scalable infrastructure. My work spans autonomous multi-agent pipelines, domain-specific LLM fine-tuning, and real-time biosignal intelligence — engineered to hold under clinical and enterprise load, not just in notebooks.
           </p>
           <p>
-            My technical portfolio includes projects deployed using FastAPI, Docker, and GitHub Actions, with model serving infrastructure on Google Cloud and Vercel. I develop systems that scale—handling dynamic data, adapting to user behavior, and offering seamless integration with user-facing interfaces.
+            As the field moves from single-model inference to compound, agentic architectures, I focus on what that transition actually demands: reliable agent orchestration with LangGraph and MCP, retrieval pipelines with genuine recall fidelity, and evaluation frameworks that surface failure modes before they reach production. I expose AI capabilities through streaming APIs and tool-use interfaces so they compose cleanly into real products.
           </p>
           <p>
-            I aim to lead and contribute to global tech initiatives that merge AI innovation with real-world strategy—whether in fintech, biomedical intelligence, or multilingual systems.
+            My cross-domain background — ML research, biosignal processing, and full-stack engineering — lets me own the entire system from sensor acquisition and model architecture to API design and cloud deployment. I'm drawn to where AI creates measurable, irreversible impact: clinical decision support, intelligent developer tooling, and multilingual knowledge systems.
           </p>
         </div>
       </div>
@@ -69,6 +69,21 @@
             <span>LLM Fine-tuning</span>
             <span>FAISS</span>
             <span>Hugging Face</span>
+            <span>RLHF / RLAIF</span>
+            <span>Multimodal AI</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3>Agentic AI &amp; Evaluation</h3>
+          <div class="skill-tags">
+            <span>LangGraph</span>
+            <span>AutoGen</span>
+            <span>MCP Protocol</span>
+            <span>Prompt Engineering</span>
+            <span>LLM Evaluation</span>
+            <span>Red-Teaming</span>
+            <span>Claude / Anthropic API</span>
+            <span>Tool Use &amp; Function Calling</span>
           </div>
         </div>
         <div class="skill-category">
@@ -105,6 +120,7 @@
             <span>GitHub Actions</span>
             <span>CI/CD</span>
             <span>Ray Serve</span>
+            <span>MLflow</span>
           </div>
         </div>
       </div>
@@ -289,6 +305,67 @@
               <div class="project-links">
                 <a href="#" class="project-link">View Code</a>
                 <button class="project-link design-btn" onclick="openModal('chat-search')">View Design</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="project-category">
+        <h3 class="category-title">Agentic AI &amp; Research</h3>
+        <div class="projects-grid">
+
+          <div class="project-card">
+            <div class="project-content">
+              <h4>Multi-Agent Research Synthesizer</h4>
+              <p>LangGraph-orchestrated pipeline of specialized agents — Planner, Web Searcher, Paper Analyzer, Synthesizer, Critic — that autonomously produces structured research briefs with citations and confidence scores from a single natural-language query.</p>
+              <div class="project-tech">
+                <span>LangGraph</span>
+                <span>Claude API</span>
+                <span>Tavily Search</span>
+                <span>FastAPI</span>
+                <span>React</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="project-link">View Code</a>
+                <button class="project-link design-btn" onclick="openModal('research-synthesizer')">View Design</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-content">
+              <h4>LLM Safety &amp; Red-Teaming Suite</h4>
+              <p>Automated adversarial evaluation framework that probes LLMs for jailbreak susceptibility, demographic bias, and capability drift. Integrates with CI/CD to gate model deployments on configurable safety thresholds.</p>
+              <div class="project-tech">
+                <span>Python</span>
+                <span>Anthropic API</span>
+                <span>Statistical Testing</span>
+                <span>GitHub Actions</span>
+                <span>Streamlit</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="project-link">View Code</a>
+                <button class="project-link design-btn" onclick="openModal('llm-safety')">View Design</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-content">
+              <h4>Adaptive Clinical AI Assistant</h4>
+              <p>Multimodal RAG pipeline ingesting ECG/PPG waveforms and clinical notes to generate structured SOAP summaries and triage recommendations. Designed around FHIR-compatible data contracts for real-world clinical integration.</p>
+              <div class="project-tech">
+                <span>LangChain</span>
+                <span>Vision Transformers</span>
+                <span>FHIR</span>
+                <span>FastAPI</span>
+                <span>PostgreSQL</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="project-link">View Code</a>
+                <button class="project-link design-btn" onclick="openModal('clinical-assistant')">View Design</button>
               </div>
             </div>
           </div>
@@ -1383,6 +1460,204 @@
                 <li><strong>tune:</strong> Hyperparameter optimization with Optuna</li>
                 <li><strong>evaluate:</strong> Generate evaluation report</li>
                 <li><strong>deploy:</strong> Export and deploy to cloud</li>
+              </ul>
+            </div>
+          </div>
+        `
+      },
+      'research-synthesizer': {
+        title: 'Multi-Agent Research Synthesizer - System Architecture',
+        content: `
+          <div class="arch-diagram">
+            <div class="arch-section">
+              <h4>LangGraph Agent Pipeline</h4>
+              <pre class="arch-code">
+┌─────────────────────────────────────────────────────────────────┐
+│                    User Query (Natural Language)                  │
+└────────────────────────────┬────────────────────────────────────┘
+                             │
+┌────────────────────────────┴────────────────────────────────────┐
+│                    LangGraph Orchestrator                         │
+│                                                                  │
+│  ┌──────────────────────────────────────────────────────────┐   │
+│  │                    Agent State Graph                      │   │
+│  │                                                           │   │
+│  │  ┌─────────┐    ┌─────────┐    ┌─────────┐              │   │
+│  │  │ Planner │───▶│ Searcher│───▶│Analyzer │              │   │
+│  │  │  Agent  │    │  Agent  │    │  Agent  │              │   │
+│  │  │         │    │(Tavily) │    │ (Claude)│              │   │
+│  │  └─────────┘    └─────────┘    └────┬────┘              │   │
+│  │       ▲                             │                    │   │
+│  │       │         ┌─────────┐    ┌────▼────┐              │   │
+│  │       └─────────│  Critic │◀───│Synthesiz│              │   │
+│  │                 │  Agent  │    │  Agent  │              │   │
+│  │                 │ (Claude)│    │ (Claude)│              │   │
+│  │                 └────┬────┘    └─────────┘              │   │
+│  │                      │ Pass / Revise loop               │   │
+│  └──────────────────────┼──────────────────────────────────┘   │
+│                         │                                       │
+│  ┌──────────────────────┴──────────────────────────────────┐   │
+│  │                  Shared Agent State                       │   │
+│  │  • query_intent   • retrieved_docs   • draft_brief       │   │
+│  │  • citations      • confidence_scores • revision_count   │   │
+│  └─────────────────────────────────────────────────────────┘   │
+└────────────────────────────┬────────────────────────────────────┘
+                             │
+┌────────────────────────────┴────────────────────────────────────┐
+│                    External Services                              │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐          │
+│  │  Tavily API  │  │ Claude API   │  │    Redis     │          │
+│  │  Web Search  │  │ Haiku/Sonnet │  │  State Cache │          │
+│  │  + Crawl     │  │ (Tool Use)   │  │  (24h TTL)   │          │
+│  └──────────────┘  └──────────────┘  └──────────────┘          │
+└─────────────────────────────────────────────────────────────────┘</pre>
+            </div>
+            <div class="arch-section">
+              <h4>Agent Responsibilities</h4>
+              <ul class="arch-list">
+                <li><strong>Planner:</strong> Decomposes query into sub-questions and search directives</li>
+                <li><strong>Searcher:</strong> Tavily web + academic search with source ranking</li>
+                <li><strong>Analyzer:</strong> Extracts claims, evidence, and confidence from each source</li>
+                <li><strong>Synthesizer:</strong> Produces structured brief with inline citations</li>
+                <li><strong>Critic:</strong> Validates logical consistency; routes back for revision if needed</li>
+              </ul>
+            </div>
+          </div>
+        `
+      },
+      'llm-safety': {
+        title: 'LLM Safety & Red-Teaming Suite - System Architecture',
+        content: `
+          <div class="arch-diagram">
+            <div class="arch-section">
+              <h4>Evaluation Pipeline Architecture</h4>
+              <pre class="arch-code">
+┌─────────────────────────────────────────────────────────────────┐
+│                    Probe Library (Versioned)                      │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐          │
+│  │  Jailbreak   │  │    Bias      │  │  Capability  │          │
+│  │  Probes      │  │  Benchmarks  │  │  Drift Probes│          │
+│  │  (450+)      │  │  (Fairness)  │  │  (Regression)│          │
+│  └──────┬───────┘  └──────┬───────┘  └──────┬───────┘          │
+└─────────┼─────────────────┼─────────────────┼───────────────────┘
+          │                 │                 │
+          └─────────────────┼─────────────────┘
+                            ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                    Evaluation Engine                              │
+│  ┌─────────────────────────────────────────────────────────┐    │
+│  │              Parallel Probe Runner                       │    │
+│  │  • Async batch dispatch to target model API              │    │
+│  │  • Rate-limited retries with jitter                      │    │
+│  │  • Response capture + metadata logging                   │    │
+│  └─────────────────────────────────────────────────────────┘    │
+│                              │                                   │
+│  ┌───────────────────────────┴───────────────────────────┐      │
+│  │              Scorer Layer                              │      │
+│  │  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐   │      │
+│  │  │ Rule-Based  │  │  LLM-as-    │  │ Statistical │   │      │
+│  │  │ Detectors   │  │  Judge      │  │  Tests      │   │      │
+│  │  │ (regex/NLP) │  │ (Claude)    │  │ (KS, Chi-sq)│   │      │
+│  │  └──────┬──────┘  └──────┬──────┘  └──────┬──────┘   │      │
+│  │         └────────────────┼────────────────┘          │      │
+│  │                          ▼                           │      │
+│  │               ┌─────────────────┐                    │      │
+│  │               │  Safety Score   │                    │      │
+│  │               │  (0–100) + Tags │                    │      │
+│  │               └────────┬────────┘                    │      │
+│  └────────────────────────┼─────────────────────────────┘      │
+└───────────────────────────┼─────────────────────────────────────┘
+                            ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                    CI/CD Gate                                     │
+│  ┌──────────────────────────────────────────────────────────┐   │
+│  │  Score ≥ threshold?                                       │   │
+│  │       │                                                   │   │
+│  │  ┌────┴────┐                                              │   │
+│  │  ▼         ▼                                              │   │
+│  │ PASS      FAIL                                            │   │
+│  │  │         │                                              │   │
+│  │  ▼         ▼                                              │   │
+│  │ Deploy   Block + Slack Alert + Failure Report             │   │
+│  └──────────────────────────────────────────────────────────┘   │
+└─────────────────────────────────────────────────────────────────┘</pre>
+            </div>
+            <div class="arch-section">
+              <h4>Evaluation Dimensions</h4>
+              <ul class="arch-list">
+                <li><strong>Jailbreak Resistance:</strong> 450+ adversarial prompts across 12 attack families</li>
+                <li><strong>Bias Auditing:</strong> Demographic parity across gender, nationality, and profession</li>
+                <li><strong>Capability Drift:</strong> Regression suite against known-good baseline outputs</li>
+                <li><strong>LLM-as-Judge:</strong> Claude evaluates nuanced refusal quality and helpfulness balance</li>
+              </ul>
+            </div>
+          </div>
+        `
+      },
+      'clinical-assistant': {
+        title: 'Adaptive Clinical AI Assistant - System Architecture',
+        content: `
+          <div class="arch-diagram">
+            <div class="arch-section">
+              <h4>Multimodal RAG Pipeline</h4>
+              <pre class="arch-code">
+┌─────────────────────────────────────────────────────────────────┐
+│                    Clinical Data Sources                          │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐          │
+│  │  ECG / PPG   │  │ Clinical     │  │  Lab Results │          │
+│  │  Waveforms   │  │ Notes (text) │  │  (HL7 FHIR)  │          │
+│  └──────┬───────┘  └──────┬───────┘  └──────┬───────┘          │
+└─────────┼─────────────────┼─────────────────┼───────────────────┘
+          │                 │                 │
+┌─────────┼─────────────────┼─────────────────┼───────────────────┐
+│         ▼                 ▼                 ▼                    │
+│                    Ingestion Layer                                │
+│  ┌─────────────────────────────────────────────────────────┐    │
+│  │  Waveform Encoder    │  Text Chunker   │  FHIR Parser   │    │
+│  │  (1D-CNN → 512d vec) │  (512 tok / 64 │  → Structured  │    │
+│  │                      │   overlap)      │  JSON          │    │
+│  └──────────────────────┴─────────────────┴────────────────┘    │
+│                              │                                   │
+│  ┌───────────────────────────┴───────────────────────────┐      │
+│  │              Multimodal Vector Store (FAISS)           │      │
+│  │  ┌────────────────────────────────────────────────┐   │      │
+│  │  │  Waveform embeddings  │  Text embeddings       │   │      │
+│  │  │  (512-dim)            │  (768-dim, BioClinical-│   │      │
+│  │  │                       │   BERT)                │   │      │
+│  │  └────────────────────────────────────────────────┘   │      │
+│  └─────────────────────────────────────────────────────┘       │
+│                              │                                   │
+│  ┌───────────────────────────┴───────────────────────────┐      │
+│  │              LangChain RAG Chain                        │      │
+│  │  Query ──▶ Hybrid Retriever ──▶ Context Assembly       │      │
+│  │            (BM25 + semantic)        │                  │      │
+│  │                                     ▼                  │      │
+│  │              ┌─────────────────────────────────────┐  │      │
+│  │              │  Claude (with clinical system prompt)│  │      │
+│  │              │  Generates:                         │  │      │
+│  │              │  • SOAP note (Subjective/Objective/ │  │      │
+│  │              │    Assessment/Plan)                  │  │      │
+│  │              │  • Triage level (1–5)               │  │      │
+│  │              │  • Differential diagnoses           │  │      │
+│  │              │  • Recommended follow-up actions    │  │      │
+│  │              └─────────────────────────────────────┘  │      │
+│  └─────────────────────────────────────────────────────┘       │
+└────────────────────────────┬────────────────────────────────────┘
+                             │
+┌────────────────────────────┴────────────────────────────────────┐
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐          │
+│  │  FastAPI     │  │  PostgreSQL  │  │  FHIR R4     │          │
+│  │  REST + SSE  │  │  Audit Log   │  │  Export      │          │
+│  └──────────────┘  └──────────────┘  └──────────────┘          │
+└─────────────────────────────────────────────────────────────────┘</pre>
+            </div>
+            <div class="arch-section">
+              <h4>Clinical AI Design Principles</h4>
+              <ul class="arch-list">
+                <li><strong>Grounded generation:</strong> Every claim anchored to retrieved source with document ID</li>
+                <li><strong>Audit trail:</strong> Full prompt + retrieved context logged per request for accountability</li>
+                <li><strong>FHIR-native output:</strong> Structured results exportable as FHIR DiagnosticReport resources</li>
+                <li><strong>Human-in-the-loop:</strong> Triage level 1–2 triggers mandatory clinician review flag</li>
               </ul>
             </div>
           </div>
