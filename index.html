@@ -151,6 +151,7 @@
               <div class="project-links">
                 <a href="https://github.com/poku0857643/personal_target_check" target="_blank" class="project-link">View Code</a>
                 <button class="project-link design-btn" onclick="openModal('ptpcs')">View Design</button>
+                <a href="#" target="_blank" class="project-link try-link">Try It ↗</a>
               </div>
             </div>
           </div>
@@ -170,6 +171,7 @@
               <div class="project-links">
                 <a href="https://github.com/poku0857643/FastAPI_ECG_preprocess" target="_blank" class="project-link">View Code</a>
                 <button class="project-link design-btn" onclick="openModal('ecg-monitor')">View Design</button>
+                <a href="#" target="_blank" class="project-link try-link">Try It ↗</a>
               </div>
             </div>
           </div>
@@ -190,6 +192,7 @@
               <div class="project-links">
                 <a href="https://github.com/poku0857643/drift_detect" target="_blank" class="project-link">View Code</a>
                 <button class="project-link design-btn" onclick="openModal('drift-detection')">View Design</button>
+                <a href="#" target="_blank" class="project-link try-link">Try It ↗</a>
               </div>
             </div>
           </div>
@@ -910,56 +913,53 @@
           <div class="arch-diagram">
             <div class="arch-section">
               <h4>High-Level Architecture</h4>
-              <pre class="arch-code">
-┌─────────────────────────────────────────────────────────────────┐
-│                    Frontend (React + Vite)                       │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐          │
-│  │  Chat UI     │  │  File Upload │  │  Markdown    │          │
-│  │  Component   │  │  Component   │  │  Renderer    │          │
-│  └──────┬───────┘  └──────┬───────┘  └──────────────┘          │
-└─────────┼─────────────────┼─────────────────────────────────────┘
-          │ SSE Stream      │ POST
-          ▼                 ▼
-┌─────────────────────────────────────────────────────────────────┐
-│                    FastAPI Backend                               │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐          │
-│  │  /api/chat   │  │  /api/upload │  │  /api/health │          │
-│  │  (streaming) │  │  (multipart) │  │              │          │
-│  └──────┬───────┘  └──────┬───────┘  └──────────────┘          │
-│         │                 │                                      │
-│         ▼                 ▼                                      │
-│  ┌─────────────────────────────────────────────────────────┐    │
-│  │                   RAG Pipeline                           │    │
-│  │  ┌─────────┐  ┌─────────┐  ┌─────────┐  ┌─────────┐    │    │
-│  │  │ Query   │─▶│ Embed   │─▶│ Search  │─▶│ Augment │    │    │
-│  │  │         │  │ (768d)  │  │ (FAISS) │  │ Context │    │    │
-│  │  └─────────┘  └─────────┘  └─────────┘  └────┬────┘    │    │
-│  └──────────────────────────────────────────────┼──────────┘    │
-│                                                  │               │
-│  ┌──────────────────────────────────────────────┼──────────┐    │
-│  │              Document Processor              │          │    │
-│  │  ┌─────────┐  ┌─────────┐  ┌─────────┐      │          │    │
-│  │  │  PDF    │  │  DOCX   │  │  TXT    │      │          │    │
-│  │  │ Parser  │  │ Parser  │  │ Parser  │      │          │    │
-│  │  └────┬────┘  └────┬────┘  └────┬────┘      │          │    │
-│  │       └────────────┼───────────┘            │          │    │
-│  │                    ▼                        │          │    │
-│  │            ┌─────────────┐                  │          │    │
-│  │            │  Chunking   │ (500 words)      │          │    │
-│  │            │  + Overlap  │ (50 overlap)     │          │    │
-│  │            └─────────────┘                  │          │    │
-│  └─────────────────────────────────────────────┼──────────┘    │
-└────────────────────────────────────────────────┼────────────────┘
-                                                 │
-                                                 ▼
-┌─────────────────────────────────────────────────────────────────┐
-│                    External Services                             │
-│  ┌──────────────────────┐  ┌──────────────────────┐            │
-│  │    Gemini AI API     │  │   FAISS Vector DB    │            │
-│  │  • text-embedding-004│  │   (In-Memory)        │            │
-│  │  • gemini-2.5-flash  │  │   768-dim vectors    │            │
-│  └──────────────────────┘  └──────────────────────┘            │
-└─────────────────────────────────────────────────────────────────┘</pre>
+              <div class="arch-flow">
+                <div class="arch-layer-group">
+                  <div class="arch-layer-title">Frontend — React + Vite</div>
+                  <div class="arch-layer">
+                    <div class="arch-component frontend">Chat UI<span>SSE streaming</span></div>
+                    <div class="arch-component frontend">File Upload<span>multipart/form-data</span></div>
+                    <div class="arch-component frontend">Markdown Renderer</div>
+                  </div>
+                </div>
+                <div class="arch-arrow-row">↓ SSE / POST</div>
+                <div class="arch-layer-group">
+                  <div class="arch-layer-title">FastAPI Backend</div>
+                  <div class="arch-layer">
+                    <div class="arch-component backend">/api/chat<span>SSE streaming</span></div>
+                    <div class="arch-component backend">/api/upload<span>multipart</span></div>
+                    <div class="arch-component backend">/api/health</div>
+                  </div>
+                </div>
+                <div class="arch-arrow-row">↓</div>
+                <div class="arch-layer-group">
+                  <div class="arch-layer-title">RAG Pipeline</div>
+                  <div class="arch-layer">
+                    <div class="arch-component ai">Query</div>
+                    <div class="arch-component ai">Embed<span>768d</span></div>
+                    <div class="arch-component ai">Search<span>FAISS</span></div>
+                    <div class="arch-component ai">Augment Context</div>
+                  </div>
+                </div>
+                <div class="arch-arrow-row">↓</div>
+                <div class="arch-layer-group">
+                  <div class="arch-layer-title">Document Processor</div>
+                  <div class="arch-layer">
+                    <div class="arch-component backend">PDF Parser</div>
+                    <div class="arch-component backend">DOCX Parser</div>
+                    <div class="arch-component backend">TXT Parser</div>
+                    <div class="arch-component backend">Chunking<span>500 words · 50 overlap</span></div>
+                  </div>
+                </div>
+                <div class="arch-arrow-row">↓</div>
+                <div class="arch-layer-group">
+                  <div class="arch-layer-title">External Services</div>
+                  <div class="arch-layer">
+                    <div class="arch-component external">Gemini AI API<span>text-embedding-004 · gemini-2.5-flash</span></div>
+                    <div class="arch-component database">FAISS Vector DB<span>in-memory · 768-dim</span></div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="arch-section">
               <h4>Key Components</h4>
@@ -979,52 +979,43 @@
           <div class="arch-diagram">
             <div class="arch-section">
               <h4>High-Level Architecture</h4>
-              <pre class="arch-code">
-┌─────────────────────────────────────────────────────────────────┐
-│                     Frontend (React)                             │
-│                  Clerk Auth + API Client                         │
-└────────────────────────┬────────────────────────────────────────┘
-                         │ HTTPS (JWT)
-┌────────────────────────┴────────────────────────────────────────┐
-│                      FastAPI Backend                             │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐          │
-│  │ REST API     │  │ MCP Server   │  │ Prediction   │          │
-│  │ /api/v1/*    │  │ /mcp         │  │ Service      │          │
-│  └──────┬───────┘  └──────┬───────┘  └──────┬───────┘          │
-│         │                  │                  │                  │
-│         └──────────────────┴──────────────────┘                  │
-│                            │                                     │
-│         ┌──────────────────┴──────────────────┐                 │
-│         │         Ray Serve Inference          │                 │
-│         │  ┌────────────────────────────────┐ │                 │
-│         │  │     MoE Router (8 Experts)     │ │                 │
-│         │  │  ┌────┐┌────┐┌────┐┌────┐     │ │                 │
-│         │  │  │ E1 ││ E2 ││ E3 ││ E4 │     │ │                 │
-│         │  │  └────┘└────┘└────┘└────┘     │ │                 │
-│         │  │  ┌────┐┌────┐┌────┐┌────┐     │ │                 │
-│         │  │  │ E5 ││ E6 ││ E7 ││ E8 │     │ │                 │
-│         │  │  └────┘└────┘└────┘└────┘     │ │                 │
-│         │  │      ▲ Top-2 Routing ▲        │ │                 │
-│         │  │      └───────┬───────┘        │ │                 │
-│         │  │        Gating Network         │ │                 │
-│         │  └────────────────────────────────┘ │                 │
-│         │                                     │                 │
-│         │  ┌────────────────────────────────┐ │                 │
-│         │  │      RLHF Drift Detector       │ │                 │
-│         │  │  • KS Test  • JS Divergence    │ │                 │
-│         │  │  • Wasserstein Distance        │ │                 │
-│         │  │  • Behavioral Neural Network   │ │                 │
-│         │  └────────────────────────────────┘ │                 │
-│         └─────────────────────────────────────┘                 │
-└────────────────────────┬────────────────────────────────────────┘
-                         │
-┌────────────────────────┴────────────────────────────────────────┐
-│              PostgreSQL + TimescaleDB + Redis                    │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐          │
-│  │ Users        │  │ Predictions  │  │ Experiments  │          │
-│  │ (Auth)       │  │ (Hypertable) │  │ (A/B Tests)  │          │
-│  └──────────────┘  └──────────────┘  └──────────────┘          │
-└─────────────────────────────────────────────────────────────────┘</pre>
+              <div class="arch-flow">
+                <div class="arch-layer-group">
+                  <div class="arch-layer-title">Frontend — React + Clerk Auth</div>
+                  <div class="arch-layer">
+                    <div class="arch-component frontend">Prediction UI</div>
+                    <div class="arch-component frontend">Expert Dashboard</div>
+                    <div class="arch-component frontend">Clerk Auth<span>JWT</span></div>
+                  </div>
+                </div>
+                <div class="arch-arrow-row">↓ HTTPS / JWT</div>
+                <div class="arch-layer-group">
+                  <div class="arch-layer-title">FastAPI Backend</div>
+                  <div class="arch-layer">
+                    <div class="arch-component backend">REST API<span>/api/v1/*</span></div>
+                    <div class="arch-component backend">MCP Server<span>/mcp</span></div>
+                    <div class="arch-component backend">Prediction Service</div>
+                  </div>
+                </div>
+                <div class="arch-arrow-row">↓</div>
+                <div class="arch-layer-group">
+                  <div class="arch-layer-title">Ray Serve Inference — MoE Router (8 Experts)</div>
+                  <div class="arch-layer">
+                    <div class="arch-component ai">Expert 1–4<span>Top-2 routing</span></div>
+                    <div class="arch-component ai">Expert 5–8<span>Gating Network</span></div>
+                    <div class="arch-component ai">RLHF Drift Detector<span>KS · JS · Wasserstein</span></div>
+                  </div>
+                </div>
+                <div class="arch-arrow-row">↓</div>
+                <div class="arch-layer-group">
+                  <div class="arch-layer-title">Data Layer</div>
+                  <div class="arch-layer">
+                    <div class="arch-component database">PostgreSQL + TimescaleDB<span>users · predictions hypertable</span></div>
+                    <div class="arch-component database">Redis<span>sessions · cache</span></div>
+                    <div class="arch-component database">Experiments<span>A/B tests</span></div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="arch-section">
               <h4>MCP Tools Exposed</h4>
@@ -1045,54 +1036,33 @@
           <div class="arch-diagram">
             <div class="arch-section">
               <h4>High-Level Architecture</h4>
-              <pre class="arch-code">
-┌─────────────────────────────────────────────────────────────────┐
-│                 Browser Extension (TypeScript)                   │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐          │
-│  │  Content     │  │  Background  │  │  Popup UI    │          │
-│  │  Scripts     │  │  Service     │  │  + Settings  │          │
-│  │  (FB/X/...)  │  │  Worker      │  │              │          │
-│  └──────┬───────┘  └──────┬───────┘  └──────────────┘          │
-│         │                  │                                     │
-│         │  Circle & Click  │                                     │
-│         │  Visual Select   │                                     │
-│         └────────┬─────────┘                                     │
-│                  │ Native Messaging                              │
-└──────────────────┼──────────────────────────────────────────────┘
-                   │
-┌──────────────────┼──────────────────────────────────────────────┐
-│                  ▼                                               │
-│           Native Messaging Host (Python)                         │
-│  ┌─────────────────────────────────────────────────────────┐    │
-│  │              FastAPI REST API Server                     │    │
-│  │  ┌──────────────────────────────────────────────────┐   │    │
-│  │  │            Verification Engine                    │   │    │
-│  │  │                                                   │   │    │
-│  │  │   ┌─────────────────────────────────────────┐    │   │    │
-│  │  │   │         Hybrid Decisor                   │    │   │    │
-│  │  │   │  Local ◄──────────────────► Cloud        │    │   │    │
-│  │  │   │  (Fast)                    (Comprehensive)│    │   │    │
-│  │  │   └─────────────────────────────────────────┘    │   │    │
-│  │  │                      │                            │   │    │
-│  │  │   ┌─────────────────┴─────────────────┐          │   │    │
-│  │  │   │                                    │          │   │    │
-│  │  │   ▼                                    ▼          │   │    │
-│  │  │  ┌──────────────────┐  ┌──────────────────┐      │   │    │
-│  │  │  │ Local ML Models  │  │  Cloud APIs      │      │   │    │
-│  │  │  │ • Sentence       │  │  • Google Fact   │      │   │    │
-│  │  │  │   Transformers   │  │    Check API     │      │   │    │
-│  │  │  │ • Semantic       │  │  • ClaimBuster   │      │   │    │
-│  │  │  │   Matching       │  │  • Factiverse    │      │   │    │
-│  │  │  │ • 14-claim DB    │  │                  │      │   │    │
-│  │  │  └──────────────────┘  └──────────────────┘      │   │    │
-│  │  └──────────────────────────────────────────────────┘   │    │
-│  └─────────────────────────────────────────────────────────┘    │
-│                              │                                   │
-│  ┌───────────────────────────┴───────────────────────────┐      │
-│  │                    Cache Layer                         │      │
-│  │               (Disk-based, 24h TTL)                    │      │
-│  └────────────────────────────────────────────────────────┘      │
-└─────────────────────────────────────────────────────────────────┘</pre>
+              <div class="arch-flow">
+                <div class="arch-layer-group">
+                  <div class="arch-layer-title">Browser Extension — TypeScript</div>
+                  <div class="arch-layer">
+                    <div class="arch-component frontend">Content Scripts<span>FB / X / news sites</span></div>
+                    <div class="arch-component frontend">Background Worker<span>circle &amp; click select</span></div>
+                    <div class="arch-component frontend">Popup UI + Settings</div>
+                  </div>
+                </div>
+                <div class="arch-arrow-row">↓ Native Messaging</div>
+                <div class="arch-layer-group">
+                  <div class="arch-layer-title">Native Messaging Host — FastAPI + Verification Engine</div>
+                  <div class="arch-layer">
+                    <div class="arch-component ai">Hybrid Decisor<span>Local ↔ Cloud routing</span></div>
+                    <div class="arch-component ai">Sentence Transformers<span>semantic matching · 14-claim DB</span></div>
+                    <div class="arch-component external">Google Fact Check API</div>
+                    <div class="arch-component external">ClaimBuster / Factiverse</div>
+                  </div>
+                </div>
+                <div class="arch-arrow-row">↓</div>
+                <div class="arch-layer-group">
+                  <div class="arch-layer-title">Cache Layer</div>
+                  <div class="arch-layer">
+                    <div class="arch-component database">Disk Cache<span>24h TTL</span></div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="arch-section">
               <h4>Verification Strategies</h4>
@@ -1111,60 +1081,54 @@
           <div class="arch-diagram">
             <div class="arch-section">
               <h4>High-Level Architecture</h4>
-              <pre class="arch-code">
-┌─────────────────────────────────────────────────────────────────┐
-│                    Data Ingestion Layer                          │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐          │
-│  │  REST API    │  │  Websocket   │  │  File Upload │          │
-│  │  Endpoints   │  │  Stream      │  │  (CSV/JSON)  │          │
-│  └──────┬───────┘  └──────┬───────┘  └──────┬───────┘          │
-└─────────┼─────────────────┼─────────────────┼───────────────────┘
-          │                 │                 │
-          └─────────────────┼─────────────────┘
-                            ▼
-┌─────────────────────────────────────────────────────────────────┐
-│                    FastAPI Backend                               │
-│  ┌─────────────────────────────────────────────────────────┐    │
-│  │              Preprocessing Pipeline                      │    │
-│  │  ┌─────────┐  ┌─────────┐  ┌─────────┐  ┌─────────┐    │    │
-│  │  │ Missing │─▶│ Resample│─▶│ Normalize│─▶│ Feature │    │    │
-│  │  │ Values  │  │ (Time)  │  │ (Z-score)│  │ Extract │    │    │
-│  │  └─────────┘  └─────────┘  └─────────┘  └─────────┘    │    │
-│  └─────────────────────────────────────────────────────────┘    │
-│                              │                                   │
-│  ┌───────────────────────────┴───────────────────────────┐      │
-│  │              Model Ensemble                            │      │
-│  │  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐   │      │
-│  │  │   ARIMA     │  │   Prophet   │  │   LSTM      │   │      │
-│  │  │  Seasonal   │  │  + Holiday  │  │  Autoencoder│   │      │
-│  │  └──────┬──────┘  └──────┬──────┘  └──────┬──────┘   │      │
-│  │         └────────────────┼────────────────┘          │      │
-│  │                          ▼                           │      │
-│  │               ┌─────────────────┐                    │      │
-│  │               │ Ensemble Voting │                    │      │
-│  │               │  (Weighted Avg) │                    │      │
-│  │               └────────┬────────┘                    │      │
-│  └────────────────────────┼─────────────────────────────┘      │
-│                           ▼                                     │
-│  ┌─────────────────────────────────────────────────────────┐    │
-│  │              Anomaly Detection Engine                    │    │
-│  │  ┌──────────────────────────────────────────────────┐   │    │
-│  │  │  Statistical     │  ML-Based      │  Threshold   │   │    │
-│  │  │  • Z-Score       │  • Isolation   │  • Dynamic   │   │    │
-│  │  │  • IQR           │    Forest      │  • Adaptive  │   │    │
-│  │  │  • Grubbs Test   │  • One-Class   │              │   │    │
-│  │  │                  │    SVM         │              │   │    │
-│  │  └──────────────────────────────────────────────────┘   │    │
-│  └─────────────────────────────────────────────────────────┘    │
-│                           │                                     │
-└───────────────────────────┼─────────────────────────────────────┘
-                            ▼
-┌─────────────────────────────────────────────────────────────────┐
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐          │
-│  │   SQLite     │  │  Dashboard   │  │   Alerting   │          │
-│  │   Logging    │  │  Analytics   │  │   (Webhook)  │          │
-│  └──────────────┘  └──────────────┘  └──────────────┘          │
-└─────────────────────────────────────────────────────────────────┘</pre>
+              <div class="arch-flow">
+                <div class="arch-layer-group">
+                  <div class="arch-layer-title">Data Ingestion</div>
+                  <div class="arch-layer">
+                    <div class="arch-component frontend">REST API Endpoints</div>
+                    <div class="arch-component frontend">WebSocket Stream</div>
+                    <div class="arch-component frontend">File Upload<span>CSV / JSON</span></div>
+                  </div>
+                </div>
+                <div class="arch-arrow-row">↓</div>
+                <div class="arch-layer-group">
+                  <div class="arch-layer-title">FastAPI — Preprocessing Pipeline</div>
+                  <div class="arch-layer">
+                    <div class="arch-component backend">Missing Values</div>
+                    <div class="arch-component backend">Resample (Time)</div>
+                    <div class="arch-component backend">Normalize<span>Z-score</span></div>
+                    <div class="arch-component backend">Feature Extract</div>
+                  </div>
+                </div>
+                <div class="arch-arrow-row">↓</div>
+                <div class="arch-layer-group">
+                  <div class="arch-layer-title">Model Ensemble + Voting</div>
+                  <div class="arch-layer">
+                    <div class="arch-component ai">ARIMA<span>Seasonal</span></div>
+                    <div class="arch-component ai">Prophet<span>+ Holiday</span></div>
+                    <div class="arch-component ai">LSTM Autoencoder</div>
+                    <div class="arch-component ai">Ensemble Voting<span>Weighted Avg</span></div>
+                  </div>
+                </div>
+                <div class="arch-arrow-row">↓</div>
+                <div class="arch-layer-group">
+                  <div class="arch-layer-title">Anomaly Detection Engine</div>
+                  <div class="arch-layer">
+                    <div class="arch-component ai">Z-Score · IQR · Grubbs</div>
+                    <div class="arch-component ai">Isolation Forest<span>One-Class SVM</span></div>
+                    <div class="arch-component ai">Dynamic Threshold<span>Adaptive</span></div>
+                  </div>
+                </div>
+                <div class="arch-arrow-row">↓</div>
+                <div class="arch-layer-group">
+                  <div class="arch-layer-title">Output</div>
+                  <div class="arch-layer">
+                    <div class="arch-component database">SQLite Logging</div>
+                    <div class="arch-component frontend">Dashboard Analytics</div>
+                    <div class="arch-component external">Alerting<span>Webhook</span></div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="arch-section">
               <h4>Detection Methods</h4>
@@ -1184,63 +1148,45 @@
           <div class="arch-diagram">
             <div class="arch-section">
               <h4>Signal Processing Pipeline</h4>
-              <pre class="arch-code">
-┌─────────────────────────────────────────────────────────────────┐
-│                    Sensor Data Acquisition                       │
-│  ┌──────────────────────┐  ┌──────────────────────┐            │
-│  │     PPG Sensor       │  │     ECG Sensor       │            │
-│  │  (Photoplethysmogram)│  │  (Electrocardiogram) │            │
-│  │  • 100-500 Hz        │  │  • 250-1000 Hz       │            │
-│  └──────────┬───────────┘  └──────────┬───────────┘            │
-└─────────────┼──────────────────────────┼────────────────────────┘
-              │                          │
-              ▼                          ▼
-┌─────────────────────────────────────────────────────────────────┐
-│                    Signal Preprocessing                          │
-│  ┌─────────────────────────────────────────────────────────┐    │
-│  │  ┌─────────┐  ┌─────────┐  ┌─────────┐  ┌─────────┐    │    │
-│  │  │ Bandpass│─▶│ Detrend │─▶│ Normalize│─▶│ Segment │    │    │
-│  │  │ Filter  │  │         │  │         │  │ (5-10s) │    │    │
-│  │  └─────────┘  └─────────┘  └─────────┘  └─────────┘    │    │
-│  └─────────────────────────────────────────────────────────┘    │
-│                              │                                   │
-│  ┌───────────────────────────┴───────────────────────────┐      │
-│  │              Feature Extraction                        │      │
-│  │  ┌────────────────┐  ┌────────────────┐               │      │
-│  │  │ PPG Features   │  │ ECG Features   │               │      │
-│  │  │ • PTT          │  │ • R-R Interval │               │      │
-│  │  │ • Pulse Width  │  │ • QRS Duration │               │      │
-│  │  │ • Amplitude    │  │ • Heart Rate   │               │      │
-│  │  │ • Area Under   │  │ • HRV Metrics  │               │      │
-│  │  │   Curve        │  │                │               │      │
-│  │  └───────┬────────┘  └───────┬────────┘               │      │
-│  │          └───────────────────┘                        │      │
-│  │                      │                                │      │
-│  │                      ▼                                │      │
-│  │          ┌─────────────────────┐                      │      │
-│  │          │   Signal Fusion     │                      │      │
-│  │          │   (PTT Calculation) │                      │      │
-│  │          └──────────┬──────────┘                      │      │
-│  └─────────────────────┼─────────────────────────────────┘      │
-│                        ▼                                        │
-│  ┌─────────────────────────────────────────────────────────┐    │
-│  │              Deep Learning Model                         │    │
-│  │  ┌──────────────────────────────────────────────────┐   │    │
-│  │  │              1D-CNN + LSTM                        │   │    │
-│  │  │  ┌─────────┐  ┌─────────┐  ┌─────────┐          │   │    │
-│  │  │  │ Conv1D  │─▶│  LSTM   │─▶│  Dense  │          │   │    │
-│  │  │  │ Layers  │  │ Layers  │  │ (BP Out)│          │   │    │
-│  │  │  └─────────┘  └─────────┘  └─────────┘          │   │    │
-│  │  │                              │                   │   │    │
-│  │  │                    ┌─────────┴─────────┐        │   │    │
-│  │  │                    ▼                   ▼        │   │    │
-│  │  │              ┌──────────┐        ┌──────────┐   │   │    │
-│  │  │              │ Systolic │        │ Diastolic│   │   │    │
-│  │  │              │ BP (mmHg)│        │ BP (mmHg)│   │   │    │
-│  │  │              └──────────┘        └──────────┘   │   │    │
-│  │  └──────────────────────────────────────────────────┘   │    │
-│  └─────────────────────────────────────────────────────────┘    │
-└─────────────────────────────────────────────────────────────────┘</pre>
+              <div class="arch-flow">
+                <div class="arch-layer-group">
+                  <div class="arch-layer-title">Sensor Data Acquisition</div>
+                  <div class="arch-layer">
+                    <div class="arch-component infra">PPG Sensor<span>Photoplethysmogram · 100–500 Hz</span></div>
+                    <div class="arch-component infra">ECG Sensor<span>Electrocardiogram · 250–1000 Hz</span></div>
+                  </div>
+                </div>
+                <div class="arch-arrow-row">↓</div>
+                <div class="arch-layer-group">
+                  <div class="arch-layer-title">Signal Preprocessing</div>
+                  <div class="arch-layer">
+                    <div class="arch-component backend">Bandpass Filter</div>
+                    <div class="arch-component backend">Detrend</div>
+                    <div class="arch-component backend">Normalize</div>
+                    <div class="arch-component backend">Segment<span>5–10s windows</span></div>
+                  </div>
+                </div>
+                <div class="arch-arrow-row">↓</div>
+                <div class="arch-layer-group">
+                  <div class="arch-layer-title">Feature Extraction + Fusion</div>
+                  <div class="arch-layer">
+                    <div class="arch-component ai">PPG Features<span>PTT · Pulse Width · AUC</span></div>
+                    <div class="arch-component ai">ECG Features<span>R-R · QRS · HRV Metrics</span></div>
+                    <div class="arch-component ai">Signal Fusion<span>PTT Calculation</span></div>
+                  </div>
+                </div>
+                <div class="arch-arrow-row">↓</div>
+                <div class="arch-layer-group">
+                  <div class="arch-layer-title">Deep Learning — 1D-CNN + LSTM</div>
+                  <div class="arch-layer">
+                    <div class="arch-component ai">Conv1D Layers</div>
+                    <div class="arch-component ai">LSTM Layers</div>
+                    <div class="arch-component ai">Dense (BP Out)</div>
+                    <div class="arch-component database">Systolic BP<span>mmHg</span></div>
+                    <div class="arch-component database">Diastolic BP<span>mmHg</span></div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="arch-section">
               <h4>Key Metrics</h4>
@@ -1259,69 +1205,51 @@
           <div class="arch-diagram">
             <div class="arch-section">
               <h4>High-Level Architecture</h4>
-              <pre class="arch-code">
-┌─────────────────────────────────────────────────────────────────┐
-│                    Apple Watch Layer                             │
-│  ┌──────────────────────────────────────────────────────────┐   │
-│  │  ECG Sensor ──▶ ECG App ──▶ HKElectrocardiogram          │   │
-│  └──────────────────────────────────────────────────────────┘   │
-└────────────────────────────┬────────────────────────────────────┘
-                             │ Bluetooth Sync
-┌────────────────────────────┴────────────────────────────────────┐
-│                    HealthKit Layer (iPhone)                      │
-│  ┌──────────────────────────────────────────────────────────┐   │
-│  │  HKElectrocardiogram Data ──▶ Health App Storage          │   │
-│  └──────────────────────────────────────────────────────────┘   │
-└────────────────────────────┬────────────────────────────────────┘
-                             │
-┌────────────────────────────┴────────────────────────────────────┐
-│                    iOS App Layer (Swift)                         │
-│  ┌─────────────────────────────────────────────────────────┐    │
-│  │  HKObserverQuery ──▶ Detect new ECG recordings           │    │
-│  │  HKSampleQuery ──▶ Fetch metadata                        │    │
-│  │  HKElectrocardiogramQuery ──▶ Stream voltage samples     │    │
-│  └─────────────────────────────────────────────────────────┘    │
-│                              │                                   │
-│  ┌───────────────────────────┴───────────────────────────┐      │
-│  │              ECG Processing Pipeline                   │      │
-│  │  ┌─────────┐  ┌─────────┐  ┌─────────┐               │      │
-│  │  │ Preproc │─▶│ Segment │─▶│ Resample│               │      │
-│  │  │ Filter  │  │ (2-sec) │  │ (Fixed N)│               │      │
-│  │  └─────────┘  └─────────┘  └─────────┘               │      │
-│  │                              │                        │      │
-│  │                              ▼                        │      │
-│  │              ┌─────────────────────────┐             │      │
-│  │              │  1D-CNN Embedding Model │             │      │
-│  │              │  (Core ML on Device)    │             │      │
-│  │              └───────────┬─────────────┘             │      │
-│  └──────────────────────────┼────────────────────────────┘      │
-│                             ▼                                    │
-│  ┌─────────────────────────────────────────────────────────┐    │
-│  │              Decision Analysis Engine                    │    │
-│  │                                                          │    │
-│  │    Decision 1           Decision 2                      │    │
-│  │  ┌──────────┐         ┌──────────┐                      │    │
-│  │  │ECG Embed │         │ECG Embed │                      │    │
-│  │  │ Segment  │         │ Segment  │                      │    │
-│  │  └────┬─────┘         └────┬─────┘                      │    │
-│  │       └─────────┬──────────┘                            │    │
-│  │                 ▼                                       │    │
-│  │    ┌────────────────────────┐                          │    │
-│  │    │ Similarity Computation │                          │    │
-│  │    │ + Sentiment Mapping    │                          │    │
-│  │    └───────────┬────────────┘                          │    │
-│  └────────────────┼─────────────────────────────────────────┘    │
-└───────────────────┼─────────────────────────────────────────────┘
-                    ▼
-┌─────────────────────────────────────────────────────────────────┐
-│                    FastAPI Backend (GCP)                         │
-│  ┌──────────────────────┐  ┌──────────────────────┐            │
-│  │  ChatGPT Integration │  │  PostgreSQL DB       │            │
-│  │  • Logic Analysis    │  │  • User Profiles     │            │
-│  │  • Decision Summary  │  │  • ECG Templates     │            │
-│  │  • Sentiment Balance │  │  • Decision History  │            │
-│  └──────────────────────┘  └──────────────────────┘            │
-└─────────────────────────────────────────────────────────────────┘</pre>
+              <div class="arch-flow">
+                <div class="arch-layer-group">
+                  <div class="arch-layer-title">Apple Watch Layer</div>
+                  <div class="arch-layer">
+                    <div class="arch-component infra">ECG Sensor → ECG App<span>HKElectrocardiogram · Bluetooth Sync</span></div>
+                    <div class="arch-component infra">HealthKit Storage<span>iPhone Health App</span></div>
+                  </div>
+                </div>
+                <div class="arch-arrow-row">↓</div>
+                <div class="arch-layer-group">
+                  <div class="arch-layer-title">iOS App — Swift + HealthKit</div>
+                  <div class="arch-layer">
+                    <div class="arch-component frontend">HKObserverQuery<span>detect new ECG recordings</span></div>
+                    <div class="arch-component frontend">HKSampleQuery<span>fetch metadata</span></div>
+                    <div class="arch-component frontend">HKElectrocardiogramQuery<span>stream voltage samples</span></div>
+                  </div>
+                </div>
+                <div class="arch-arrow-row">↓</div>
+                <div class="arch-layer-group">
+                  <div class="arch-layer-title">ECG Processing + Embedding</div>
+                  <div class="arch-layer">
+                    <div class="arch-component ai">Preproc Filter</div>
+                    <div class="arch-component ai">Segment<span>2-sec windows</span></div>
+                    <div class="arch-component ai">Resample<span>Fixed N</span></div>
+                    <div class="arch-component ai">1D-CNN Embedding<span>Core ML on device</span></div>
+                  </div>
+                </div>
+                <div class="arch-arrow-row">↓</div>
+                <div class="arch-layer-group">
+                  <div class="arch-layer-title">Decision Analysis Engine</div>
+                  <div class="arch-layer">
+                    <div class="arch-component ai">ECG Embed (Decision 1)</div>
+                    <div class="arch-component ai">ECG Embed (Decision 2)</div>
+                    <div class="arch-component ai">Similarity Computation<span>+ Sentiment Mapping</span></div>
+                  </div>
+                </div>
+                <div class="arch-arrow-row">↓</div>
+                <div class="arch-layer-group">
+                  <div class="arch-layer-title">FastAPI Backend — GCP</div>
+                  <div class="arch-layer">
+                    <div class="arch-component external">ChatGPT Integration<span>Logic analysis · Decision summary</span></div>
+                    <div class="arch-component database">PostgreSQL<span>User profiles · ECG templates · History</span></div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="arch-section">
               <h4>Emotional States Detected</h4>
@@ -1341,65 +1269,43 @@
           <div class="arch-diagram">
             <div class="arch-section">
               <h4>High-Level Architecture</h4>
-              <pre class="arch-code">
-┌─────────────────────────────────────────────────────────────────┐
-│                    Client Applications                           │
-│  ┌──────────────────────┐  ┌──────────────────────┐            │
-│  │   React Web App      │  │   iOS App (Swift)    │            │
-│  │   • Route Planning   │  │   • GPS Tracking     │            │
-│  │   • Map Interface    │  │   • Push Notifications│            │
-│  │   • Preferences UI   │  │   • Offline Mode     │            │
-│  └──────────┬───────────┘  └──────────┬───────────┘            │
-└─────────────┼──────────────────────────┼────────────────────────┘
-              │                          │
-              └────────────┬─────────────┘
-                           │ REST API / GraphQL
-┌──────────────────────────┴──────────────────────────────────────┐
-│                    FastAPI Backend                               │
-│  ┌─────────────────────────────────────────────────────────┐    │
-│  │                    API Gateway                           │    │
-│  │  ┌─────────┐  ┌─────────┐  ┌─────────┐  ┌─────────┐    │    │
-│  │  │ Auth    │  │ Routes  │  │ Spots   │  │ Prefs   │    │    │
-│  │  │ (JWT)   │  │ Service │  │ Service │  │ Service │    │    │
-│  │  └─────────┘  └─────────┘  └─────────┘  └─────────┘    │    │
-│  └─────────────────────────────────────────────────────────┘    │
-│                              │                                   │
-│  ┌───────────────────────────┴───────────────────────────┐      │
-│  │              Recommendation Engine                     │      │
-│  │  ┌─────────────────────────────────────────────────┐  │      │
-│  │  │            GPT-4 Integration                     │  │      │
-│  │  │  • Natural Language Preferences                  │  │      │
-│  │  │  • Context-Aware Suggestions                     │  │      │
-│  │  │  • Personalized Descriptions                     │  │      │
-│  │  └─────────────────────────────────────────────────┘  │      │
-│  │                              │                        │      │
-│  │  ┌──────────────────────────┴──────────────────────┐ │      │
-│  │  │              ML Ranking Model                    │ │      │
-│  │  │  ┌──────────┐  ┌──────────┐  ┌──────────┐      │ │      │
-│  │  │  │ User     │  │ Location │  │ Time/    │      │ │      │
-│  │  │  │ Prefs    │  │ Context  │  │ Weather  │      │ │      │
-│  │  │  └────┬─────┘  └────┬─────┘  └────┬─────┘      │ │      │
-│  │  │       └─────────────┼─────────────┘            │ │      │
-│  │  │                     ▼                          │ │      │
-│  │  │          ┌─────────────────────┐               │ │      │
-│  │  │          │  Ranking Score      │               │ │      │
-│  │  │          │  (Personalized)     │               │ │      │
-│  │  │          └─────────────────────┘               │ │      │
-│  │  └────────────────────────────────────────────────┘ │      │
-│  └─────────────────────────────────────────────────────┘      │
-│                              │                                   │
-└──────────────────────────────┼──────────────────────────────────┘
-                               │
-┌──────────────────────────────┴──────────────────────────────────┐
-│                    External Services & Data                      │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐          │
-│  │ Google Maps  │  │ PostgreSQL   │  │    Redis     │          │
-│  │ Places API   │  │ (GCP)        │  │   (Cache)    │          │
-│  │ • Nearby     │  │ • Users      │  │ • Sessions   │          │
-│  │ • Details    │  │ • Favorites  │  │ • Geo Cache  │          │
-│  │ • Photos     │  │ • Routes     │  │              │          │
-│  └──────────────┘  └──────────────┘  └──────────────┘          │
-└─────────────────────────────────────────────────────────────────┘</pre>
+              <div class="arch-flow">
+                <div class="arch-layer-group">
+                  <div class="arch-layer-title">Client Applications</div>
+                  <div class="arch-layer">
+                    <div class="arch-component frontend">React Web App<span>Route planning · Map interface</span></div>
+                    <div class="arch-component frontend">iOS App (Swift)<span>GPS tracking · Push notifications</span></div>
+                  </div>
+                </div>
+                <div class="arch-arrow-row">↓ REST API / GraphQL</div>
+                <div class="arch-layer-group">
+                  <div class="arch-layer-title">FastAPI Backend — API Gateway</div>
+                  <div class="arch-layer">
+                    <div class="arch-component backend">Auth<span>JWT</span></div>
+                    <div class="arch-component backend">Routes Service</div>
+                    <div class="arch-component backend">Spots Service</div>
+                    <div class="arch-component backend">Prefs Service</div>
+                  </div>
+                </div>
+                <div class="arch-arrow-row">↓</div>
+                <div class="arch-layer-group">
+                  <div class="arch-layer-title">Recommendation Engine</div>
+                  <div class="arch-layer">
+                    <div class="arch-component ai">GPT-4<span>NL preferences · Context-aware suggestions</span></div>
+                    <div class="arch-component ai">ML Ranking Model<span>User prefs · Location · Time/Weather</span></div>
+                    <div class="arch-component ai">Personalized Score</div>
+                  </div>
+                </div>
+                <div class="arch-arrow-row">↓</div>
+                <div class="arch-layer-group">
+                  <div class="arch-layer-title">External Services &amp; Data</div>
+                  <div class="arch-layer">
+                    <div class="arch-component external">Google Maps Places API<span>Nearby · Details · Photos</span></div>
+                    <div class="arch-component database">PostgreSQL (GCP)<span>Users · Favorites · Routes</span></div>
+                    <div class="arch-component database">Redis<span>Sessions · Geo Cache</span></div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="arch-section">
               <h4>Recommendation Modes</h4>
@@ -1419,70 +1325,43 @@
           <div class="arch-diagram">
             <div class="arch-section">
               <h4>High-Level Architecture</h4>
-              <pre class="arch-code">
-┌─────────────────────────────────────────────────────────────────┐
-│                    Search Interface                              │
-│  ┌──────────────────────────────────────────────────────────┐   │
-│  │  Query Input ──▶ Language Detection ──▶ Query Processing  │   │
-│  │                  (EN / ZH / Auto)                         │   │
-│  └──────────────────────────────────────────────────────────┘   │
-└────────────────────────────┬────────────────────────────────────┘
-                             │
-┌────────────────────────────┴────────────────────────────────────┐
-│                    NLP Processing Pipeline                       │
-│  ┌─────────────────────────────────────────────────────────┐    │
-│  │              Named Entity Recognition (NER)              │    │
-│  │  ┌──────────────────┐  ┌──────────────────┐            │    │
-│  │  │ English NER      │  │ Chinese NER      │            │    │
-│  │  │ • spaCy en_core  │  │ • spaCy zh_core  │            │    │
-│  │  │ • Custom entities│  │ • Custom entities│            │    │
-│  │  │ • PERSON, ORG    │  │ • 人名, 组织      │            │    │
-│  │  │ • LOCATION, DATE │  │ • 地点, 日期      │            │    │
-│  │  └────────┬─────────┘  └────────┬─────────┘            │    │
-│  │           └─────────────────────┘                       │    │
-│  │                      │                                  │    │
-│  │                      ▼                                  │    │
-│  │  ┌──────────────────────────────────────────────────┐  │    │
-│  │  │           Entity Linking & Resolution             │  │    │
-│  │  │  • Cross-lingual entity matching                  │  │    │
-│  │  │  • Alias resolution                               │  │    │
-│  │  │  • Knowledge base linking                         │  │    │
-│  │  └──────────────────────────────────────────────────┘  │    │
-│  └─────────────────────────────────────────────────────────┘    │
-│                              │                                   │
-│  ┌───────────────────────────┴───────────────────────────┐      │
-│  │              Semantic Search Engine                    │      │
-│  │  ┌─────────────────────────────────────────────────┐  │      │
-│  │  │         Multilingual Embeddings                  │  │      │
-│  │  │  ┌─────────────────────────────────────────┐    │  │      │
-│  │  │  │   Sentence Transformers                  │    │  │      │
-│  │  │  │   (paraphrase-multilingual-MiniLM)      │    │  │      │
-│  │  │  └─────────────────────────────────────────┘    │  │      │
-│  │  │                      │                           │  │      │
-│  │  │                      ▼                           │  │      │
-│  │  │  ┌────────────────────────────────────────────┐ │  │      │
-│  │  │  │  Vector Similarity Search                  │ │  │      │
-│  │  │  │  • FAISS Index                             │ │  │      │
-│  │  │  │  • Cross-lingual retrieval                 │ │  │      │
-│  │  │  └────────────────────────────────────────────┘ │  │      │
-│  │  └─────────────────────────────────────────────────┘  │      │
-│  └───────────────────────────────────────────────────────┘      │
-│                              │                                   │
-└──────────────────────────────┼──────────────────────────────────┘
-                               │
-┌──────────────────────────────┴──────────────────────────────────┐
-│                    Results & Ranking                             │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐          │
-│  │ BM25 Score   │  │ Semantic     │  │ Entity       │          │
-│  │ (Keyword)    │  │ Similarity   │  │ Boost        │          │
-│  └──────┬───────┘  └──────┬───────┘  └──────┬───────┘          │
-│         └─────────────────┼─────────────────┘                   │
-│                           ▼                                      │
-│              ┌─────────────────────────┐                        │
-│              │  Hybrid Ranking Score   │                        │
-│              │  + Snippet Generation   │                        │
-│              └─────────────────────────┘                        │
-└─────────────────────────────────────────────────────────────────┘</pre>
+              <div class="arch-flow">
+                <div class="arch-layer-group">
+                  <div class="arch-layer-title">Search Interface</div>
+                  <div class="arch-layer">
+                    <div class="arch-component frontend">Query Input</div>
+                    <div class="arch-component frontend">Language Detection<span>EN / ZH / Auto</span></div>
+                    <div class="arch-component frontend">Query Processing</div>
+                  </div>
+                </div>
+                <div class="arch-arrow-row">↓</div>
+                <div class="arch-layer-group">
+                  <div class="arch-layer-title">NLP — Named Entity Recognition</div>
+                  <div class="arch-layer">
+                    <div class="arch-component ai">English NER<span>spaCy en_core · PERSON · ORG · LOC</span></div>
+                    <div class="arch-component ai">Chinese NER<span>spaCy zh_core · 人名 · 组织 · 地点</span></div>
+                    <div class="arch-component ai">Entity Linking<span>Cross-lingual matching · Alias resolution</span></div>
+                  </div>
+                </div>
+                <div class="arch-arrow-row">↓</div>
+                <div class="arch-layer-group">
+                  <div class="arch-layer-title">Semantic Search Engine</div>
+                  <div class="arch-layer">
+                    <div class="arch-component ai">Sentence Transformers<span>paraphrase-multilingual-MiniLM</span></div>
+                    <div class="arch-component database">FAISS Index<span>Cross-lingual retrieval</span></div>
+                  </div>
+                </div>
+                <div class="arch-arrow-row">↓</div>
+                <div class="arch-layer-group">
+                  <div class="arch-layer-title">Results &amp; Ranking</div>
+                  <div class="arch-layer">
+                    <div class="arch-component backend">BM25 Score<span>Keyword</span></div>
+                    <div class="arch-component backend">Semantic Similarity</div>
+                    <div class="arch-component backend">Entity Boost</div>
+                    <div class="arch-component ai">Hybrid Ranking<span>+ Snippet generation</span></div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="arch-section">
               <h4>Search Features</h4>
@@ -1501,72 +1380,43 @@
           <div class="arch-diagram">
             <div class="arch-section">
               <h4>CI/CD Pipeline Architecture</h4>
-              <pre class="arch-code">
-┌─────────────────────────────────────────────────────────────────┐
-│                    GitHub Repository                             │
-│  ┌──────────────────────────────────────────────────────────┐   │
-│  │  Push / PR ──▶ GitHub Actions Workflow Trigger            │   │
-│  └──────────────────────────────────────────────────────────┘   │
-└────────────────────────────┬────────────────────────────────────┘
-                             │
-┌────────────────────────────┴────────────────────────────────────┐
-│                    GitHub Actions Workflow                       │
-│  ┌─────────────────────────────────────────────────────────┐    │
-│  │                    Pipeline Stages                       │    │
-│  │                                                          │    │
-│  │  ┌─────────┐  ┌─────────┐  ┌─────────┐  ┌─────────┐    │    │
-│  │  │  Build  │─▶│  Test   │─▶│  Drift  │─▶│ Deploy  │    │    │
-│  │  │         │  │         │  │  Check  │  │         │    │    │
-│  │  └─────────┘  └─────────┘  └────┬────┘  └─────────┘    │    │
-│  │                                 │                       │    │
-│  └─────────────────────────────────┼───────────────────────┘    │
-│                                    │                             │
-│  ┌─────────────────────────────────┴───────────────────────┐    │
-│  │              Drift Detection Module                      │    │
-│  │                                                          │    │
-│  │  ┌─────────────────────────────────────────────────┐    │    │
-│  │  │           Data Distribution Check                │    │    │
-│  │  │  ┌──────────┐  ┌──────────┐  ┌──────────┐      │    │    │
-│  │  │  │ KS Test  │  │ Chi-Sq   │  │ PSI      │      │    │    │
-│  │  │  │ (Cont.)  │  │ (Categ.) │  │ (Stabil.)│      │    │    │
-│  │  │  └──────────┘  └──────────┘  └──────────┘      │    │    │
-│  │  └─────────────────────────────────────────────────┘    │    │
-│  │                         │                                │    │
-│  │  ┌─────────────────────┴───────────────────────────┐    │    │
-│  │  │           Model Performance Check                │    │    │
-│  │  │  ┌──────────────────────────────────────────┐   │    │    │
-│  │  │  │  Current Model vs. Baseline Metrics       │   │    │    │
-│  │  │  │  • Accuracy Delta                         │   │    │    │
-│  │  │  │  • F1 Score Delta                         │   │    │    │
-│  │  │  │  • AUC-ROC Delta                          │   │    │    │
-│  │  │  └──────────────────────────────────────────┘   │    │    │
-│  │  └──────────────────────────────────────────────────┘    │    │
-│  │                         │                                │    │
-│  │  ┌─────────────────────┴───────────────────────────┐    │    │
-│  │  │              Decision Engine                     │    │    │
-│  │  │                                                  │    │    │
-│  │  │   Drift Detected?                                │    │    │
-│  │  │         │                                        │    │    │
-│  │  │    ┌────┴────┐                                   │    │    │
-│  │  │    ▼         ▼                                   │    │    │
-│  │  │   YES        NO                                  │    │    │
-│  │  │    │         │                                   │    │    │
-│  │  │    ▼         ▼                                   │    │    │
-│  │  │ ┌──────┐  ┌──────┐                              │    │    │
-│  │  │ │Alert │  │Deploy│                              │    │    │
-│  │  │ │Retrain│ │Prod  │                              │    │    │
-│  │  │ └──────┘  └──────┘                              │    │    │
-│  │  └──────────────────────────────────────────────────┘    │    │
-│  └──────────────────────────────────────────────────────────┘    │
-└─────────────────────────────────────────────────────────────────┘
-                             │
-┌────────────────────────────┴────────────────────────────────────┐
-│                    Automated Actions                             │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐          │
-│  │ Slack/Email  │  │ Auto Retrain │  │ Rollback     │          │
-│  │ Notification │  │ Pipeline     │  │ Previous Ver │          │
-│  └──────────────┘  └──────────────┘  └──────────────┘          │
-└─────────────────────────────────────────────────────────────────┘</pre>
+              <div class="arch-flow">
+                <div class="arch-layer-group">
+                  <div class="arch-layer-title">GitHub Repository</div>
+                  <div class="arch-layer">
+                    <div class="arch-component infra">Push / PR → GitHub Actions Trigger</div>
+                  </div>
+                </div>
+                <div class="arch-arrow-row">↓</div>
+                <div class="arch-layer-group">
+                  <div class="arch-layer-title">GitHub Actions — Pipeline Stages</div>
+                  <div class="arch-layer">
+                    <div class="arch-component backend">Build</div>
+                    <div class="arch-component backend">Test</div>
+                    <div class="arch-component ai">Drift Check</div>
+                    <div class="arch-component infra">Deploy</div>
+                  </div>
+                </div>
+                <div class="arch-arrow-row">↓ Drift Check</div>
+                <div class="arch-layer-group">
+                  <div class="arch-layer-title">Drift Detection Module</div>
+                  <div class="arch-layer">
+                    <div class="arch-component ai">KS Test<span>Continuous features</span></div>
+                    <div class="arch-component ai">Chi-Square<span>Categorical</span></div>
+                    <div class="arch-component ai">PSI<span>Stability index</span></div>
+                    <div class="arch-component ai">Model Delta<span>Accuracy · F1 · AUC-ROC</span></div>
+                  </div>
+                </div>
+                <div class="arch-arrow-row">↓ Decision Gate</div>
+                <div class="arch-layer-group">
+                  <div class="arch-layer-title">Automated Actions</div>
+                  <div class="arch-layer">
+                    <div class="arch-component external">Slack / Email Alert</div>
+                    <div class="arch-component backend">Auto Retrain Pipeline</div>
+                    <div class="arch-component infra">Rollback Previous Version</div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="arch-section">
               <h4>Drift Detection Methods</h4>
@@ -1585,73 +1435,57 @@
           <div class="arch-diagram">
             <div class="arch-section">
               <h4>CLI Tool Architecture</h4>
-              <pre class="arch-code">
-┌─────────────────────────────────────────────────────────────────┐
-│                    CLI Interface (Click/Typer)                   │
-│  ┌──────────────────────────────────────────────────────────┐   │
-│  │  $ autotrainer train --config config.yaml                 │   │
-│  │  $ autotrainer tune --trials 100                          │   │
-│  │  $ autotrainer evaluate --model best_model.pkl            │   │
-│  │  $ autotrainer deploy --target gcp                        │   │
-│  └──────────────────────────────────────────────────────────┘   │
-└────────────────────────────┬────────────────────────────────────┘
-                             │
-┌────────────────────────────┴────────────────────────────────────┐
-│                    Core Training Engine                          │
-│                                                                  │
-│  ┌─────────────────────────────────────────────────────────┐    │
-│  │              Configuration Parser (YAML/JSON)            │    │
-│  │  • Data paths          • Model selection                 │    │
-│  │  • Feature engineering • Hyperparameter space            │    │
-│  │  • Training params     • Evaluation metrics              │    │
-│  └─────────────────────────────────────────────────────────┘    │
-│                              │                                   │
-│  ┌───────────────────────────┴───────────────────────────┐      │
-│  │              Data Pipeline                             │      │
-│  │  ┌─────────┐  ┌─────────┐  ┌─────────┐              │      │
-│  │  │  Load   │─▶│ Validate│─▶│ Feature │              │      │
-│  │  │  Data   │  │ Schema  │  │ Engineer│              │      │
-│  │  └─────────┘  └─────────┘  └─────────┘              │      │
-│  │                              │                       │      │
-│  │                              ▼                       │      │
-│  │              ┌─────────────────────────┐            │      │
-│  │              │  Train/Val/Test Split   │            │      │
-│  │              └─────────────────────────┘            │      │
-│  └───────────────────────────────────────────────────────┘      │
-│                              │                                   │
-│  ┌───────────────────────────┴───────────────────────────┐      │
-│  │              AutoML Module                             │      │
-│  │                                                        │      │
-│  │  ┌─────────────────────────────────────────────────┐  │      │
-│  │  │         Hyperparameter Tuning (Optuna)           │  │      │
-│  │  │  ┌──────────┐  ┌──────────┐  ┌──────────┐      │  │      │
-│  │  │  │ Bayesian │  │ Grid     │  │ Random   │      │  │      │
-│  │  │  │ Optim    │  │ Search   │  │ Search   │      │  │      │
-│  │  │  └──────────┘  └──────────┘  └──────────┘      │  │      │
-│  │  └─────────────────────────────────────────────────┘  │      │
-│  │                              │                        │      │
-│  │  ┌──────────────────────────┴──────────────────────┐ │      │
-│  │  │              Model Zoo                           │ │      │
-│  │  │  ┌──────┐ ┌──────┐ ┌──────┐ ┌──────┐ ┌──────┐ │ │      │
-│  │  │  │ XGB  │ │ LGB  │ │ RF   │ │ SVM  │ │ NN   │ │ │      │
-│  │  │  └──────┘ └──────┘ └──────┘ └──────┘ └──────┘ │ │      │
-│  │  └──────────────────────────────────────────────────┘ │      │
-│  └───────────────────────────────────────────────────────┘      │
-│                              │                                   │
-│  ┌───────────────────────────┴───────────────────────────┐      │
-│  │              Experiment Tracking (MLflow/W&B)          │      │
-│  │  • Metrics logging        • Model versioning           │      │
-│  │  • Artifact storage       • Comparison dashboard       │      │
-│  └───────────────────────────────────────────────────────┘      │
-└─────────────────────────────────────────────────────────────────┘
-                             │
-┌────────────────────────────┴────────────────────────────────────┐
-│                    Output & Deployment                           │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐          │
-│  │ Best Model   │  │ Metrics      │  │ Deploy       │          │
-│  │ (Pickle/ONNX)│  │ Report (HTML)│  │ Script       │          │
-│  └──────────────┘  └──────────────┘  └──────────────┘          │
-└─────────────────────────────────────────────────────────────────┘</pre>
+              <div class="arch-flow">
+                <div class="arch-layer-group">
+                  <div class="arch-layer-title">CLI Interface — Click / Typer</div>
+                  <div class="arch-layer">
+                    <div class="arch-component frontend">train<span>--config config.yaml</span></div>
+                    <div class="arch-component frontend">tune<span>--trials 100</span></div>
+                    <div class="arch-component frontend">evaluate<span>--model best.pkl</span></div>
+                    <div class="arch-component frontend">deploy<span>--target gcp</span></div>
+                  </div>
+                </div>
+                <div class="arch-arrow-row">↓</div>
+                <div class="arch-layer-group">
+                  <div class="arch-layer-title">Config Parser — YAML / JSON</div>
+                  <div class="arch-layer">
+                    <div class="arch-component backend">Data Paths</div>
+                    <div class="arch-component backend">Model Selection</div>
+                    <div class="arch-component backend">Hyperparameter Space</div>
+                    <div class="arch-component backend">Eval Metrics</div>
+                  </div>
+                </div>
+                <div class="arch-arrow-row">↓</div>
+                <div class="arch-layer-group">
+                  <div class="arch-layer-title">Data Pipeline</div>
+                  <div class="arch-layer">
+                    <div class="arch-component backend">Load Data</div>
+                    <div class="arch-component backend">Validate Schema</div>
+                    <div class="arch-component backend">Feature Engineer</div>
+                    <div class="arch-component backend">Train / Val / Test Split</div>
+                  </div>
+                </div>
+                <div class="arch-arrow-row">↓</div>
+                <div class="arch-layer-group">
+                  <div class="arch-layer-title">AutoML — Optuna Tuning + Model Zoo</div>
+                  <div class="arch-layer">
+                    <div class="arch-component ai">Bayesian Optim</div>
+                    <div class="arch-component ai">Grid Search</div>
+                    <div class="arch-component ai">Random Search</div>
+                    <div class="arch-component ai">XGBoost · LightGBM · RF · SVM · NN</div>
+                  </div>
+                </div>
+                <div class="arch-arrow-row">↓</div>
+                <div class="arch-layer-group">
+                  <div class="arch-layer-title">Experiment Tracking &amp; Output</div>
+                  <div class="arch-layer">
+                    <div class="arch-component infra">MLflow / W&amp;B<span>metrics · versioning</span></div>
+                    <div class="arch-component database">Best Model<span>Pickle / ONNX</span></div>
+                    <div class="arch-component database">Metrics Report<span>HTML</span></div>
+                    <div class="arch-component external">Deploy Script<span>GCP / AWS</span></div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="arch-section">
               <h4>CLI Commands</h4>
@@ -1671,46 +1505,45 @@
           <div class="arch-diagram">
             <div class="arch-section">
               <h4>LangGraph Agent Pipeline</h4>
-              <pre class="arch-code">
-┌─────────────────────────────────────────────────────────────────┐
-│                    User Query (Natural Language)                  │
-└────────────────────────────┬────────────────────────────────────┘
-                             │
-┌────────────────────────────┴────────────────────────────────────┐
-│                    LangGraph Orchestrator                         │
-│                                                                  │
-│  ┌──────────────────────────────────────────────────────────┐   │
-│  │                    Agent State Graph                      │   │
-│  │                                                           │   │
-│  │  ┌─────────┐    ┌─────────┐    ┌─────────┐              │   │
-│  │  │ Planner │───▶│ Searcher│───▶│Analyzer │              │   │
-│  │  │  Agent  │    │  Agent  │    │  Agent  │              │   │
-│  │  │         │    │(Tavily) │    │ (Claude)│              │   │
-│  │  └─────────┘    └─────────┘    └────┬────┘              │   │
-│  │       ▲                             │                    │   │
-│  │       │         ┌─────────┐    ┌────▼────┐              │   │
-│  │       └─────────│  Critic │◀───│Synthesiz│              │   │
-│  │                 │  Agent  │    │  Agent  │              │   │
-│  │                 │ (Claude)│    │ (Claude)│              │   │
-│  │                 └────┬────┘    └─────────┘              │   │
-│  │                      │ Pass / Revise loop               │   │
-│  └──────────────────────┼──────────────────────────────────┘   │
-│                         │                                       │
-│  ┌──────────────────────┴──────────────────────────────────┐   │
-│  │                  Shared Agent State                       │   │
-│  │  • query_intent   • retrieved_docs   • draft_brief       │   │
-│  │  • citations      • confidence_scores • revision_count   │   │
-│  └─────────────────────────────────────────────────────────┘   │
-└────────────────────────────┬────────────────────────────────────┘
-                             │
-┌────────────────────────────┴────────────────────────────────────┐
-│                    External Services                              │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐          │
-│  │  Tavily API  │  │ Claude API   │  │    Redis     │          │
-│  │  Web Search  │  │ Haiku/Sonnet │  │  State Cache │          │
-│  │  + Crawl     │  │ (Tool Use)   │  │  (24h TTL)   │          │
-│  └──────────────┘  └──────────────┘  └──────────────┘          │
-└─────────────────────────────────────────────────────────────────┘</pre>
+              <div class="arch-flow">
+                <div class="arch-layer-group">
+                  <div class="arch-layer-title">Entry</div>
+                  <div class="arch-layer">
+                    <div class="arch-component frontend">User Query<span>natural language</span></div>
+                  </div>
+                </div>
+                <div class="arch-arrow-row">↓ LangGraph Orchestrator</div>
+                <div class="arch-layer-group">
+                  <div class="arch-layer-title">Agent State Graph</div>
+                  <div class="arch-layer">
+                    <div class="arch-component agent">Planner Agent<span>decomposes query</span></div>
+                    <div class="arch-component agent">Searcher Agent<span>Tavily web + academic</span></div>
+                    <div class="arch-component agent">Analyzer Agent<span>Claude · claims + evidence</span></div>
+                    <div class="arch-component agent">Synthesizer Agent<span>Claude · structured brief</span></div>
+                    <div class="arch-component agent">Critic Agent<span>Claude · pass / revise loop</span></div>
+                  </div>
+                </div>
+                <div class="arch-arrow-row">↓</div>
+                <div class="arch-layer-group">
+                  <div class="arch-layer-title">Shared State</div>
+                  <div class="arch-layer">
+                    <div class="arch-component backend">query_intent</div>
+                    <div class="arch-component backend">retrieved_docs</div>
+                    <div class="arch-component backend">draft_brief</div>
+                    <div class="arch-component backend">citations</div>
+                    <div class="arch-component backend">confidence_scores</div>
+                  </div>
+                </div>
+                <div class="arch-arrow-row">↓</div>
+                <div class="arch-layer-group">
+                  <div class="arch-layer-title">External Services</div>
+                  <div class="arch-layer">
+                    <div class="arch-component external">Tavily API<span>web search + crawl</span></div>
+                    <div class="arch-component external">Claude API<span>Haiku / Sonnet · tool use</span></div>
+                    <div class="arch-component database">Redis<span>state cache · 24h TTL</span></div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="arch-section">
               <h4>Agent Responsibilities</h4>
@@ -1731,56 +1564,42 @@
           <div class="arch-diagram">
             <div class="arch-section">
               <h4>Evaluation Pipeline Architecture</h4>
-              <pre class="arch-code">
-┌─────────────────────────────────────────────────────────────────┐
-│                    Probe Library (Versioned)                      │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐          │
-│  │  Jailbreak   │  │    Bias      │  │  Capability  │          │
-│  │  Probes      │  │  Benchmarks  │  │  Drift Probes│          │
-│  │  (450+)      │  │  (Fairness)  │  │  (Regression)│          │
-│  └──────┬───────┘  └──────┬───────┘  └──────┬───────┘          │
-└─────────┼─────────────────┼─────────────────┼───────────────────┘
-          │                 │                 │
-          └─────────────────┼─────────────────┘
-                            ▼
-┌─────────────────────────────────────────────────────────────────┐
-│                    Evaluation Engine                              │
-│  ┌─────────────────────────────────────────────────────────┐    │
-│  │              Parallel Probe Runner                       │    │
-│  │  • Async batch dispatch to target model API              │    │
-│  │  • Rate-limited retries with jitter                      │    │
-│  │  • Response capture + metadata logging                   │    │
-│  └─────────────────────────────────────────────────────────┘    │
-│                              │                                   │
-│  ┌───────────────────────────┴───────────────────────────┐      │
-│  │              Scorer Layer                              │      │
-│  │  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐   │      │
-│  │  │ Rule-Based  │  │  LLM-as-    │  │ Statistical │   │      │
-│  │  │ Detectors   │  │  Judge      │  │  Tests      │   │      │
-│  │  │ (regex/NLP) │  │ (Claude)    │  │ (KS, Chi-sq)│   │      │
-│  │  └──────┬──────┘  └──────┬──────┘  └──────┬──────┘   │      │
-│  │         └────────────────┼────────────────┘          │      │
-│  │                          ▼                           │      │
-│  │               ┌─────────────────┐                    │      │
-│  │               │  Safety Score   │                    │      │
-│  │               │  (0–100) + Tags │                    │      │
-│  │               └────────┬────────┘                    │      │
-│  └────────────────────────┼─────────────────────────────┘      │
-└───────────────────────────┼─────────────────────────────────────┘
-                            ▼
-┌─────────────────────────────────────────────────────────────────┐
-│                    CI/CD Gate                                     │
-│  ┌──────────────────────────────────────────────────────────┐   │
-│  │  Score ≥ threshold?                                       │   │
-│  │       │                                                   │   │
-│  │  ┌────┴────┐                                              │   │
-│  │  ▼         ▼                                              │   │
-│  │ PASS      FAIL                                            │   │
-│  │  │         │                                              │   │
-│  │  ▼         ▼                                              │   │
-│  │ Deploy   Block + Slack Alert + Failure Report             │   │
-│  └──────────────────────────────────────────────────────────┘   │
-└─────────────────────────────────────────────────────────────────┘</pre>
+              <div class="arch-flow">
+                <div class="arch-layer-group">
+                  <div class="arch-layer-title">Probe Library (Versioned)</div>
+                  <div class="arch-layer">
+                    <div class="arch-component ai">Jailbreak Probes<span>450+ · 12 attack families</span></div>
+                    <div class="arch-component ai">Bias Benchmarks<span>fairness · demographic parity</span></div>
+                    <div class="arch-component ai">Capability Drift Probes<span>regression suite</span></div>
+                  </div>
+                </div>
+                <div class="arch-arrow-row">↓</div>
+                <div class="arch-layer-group">
+                  <div class="arch-layer-title">Evaluation Engine</div>
+                  <div class="arch-layer">
+                    <div class="arch-component backend">Parallel Probe Runner<span>async batch · rate-limited</span></div>
+                    <div class="arch-component backend">Response Capture<span>+ metadata logging</span></div>
+                  </div>
+                </div>
+                <div class="arch-arrow-row">↓</div>
+                <div class="arch-layer-group">
+                  <div class="arch-layer-title">Scorer Layer</div>
+                  <div class="arch-layer">
+                    <div class="arch-component ai">Rule-Based Detectors<span>regex · NLP</span></div>
+                    <div class="arch-component ai">LLM-as-Judge<span>Claude · refusal quality</span></div>
+                    <div class="arch-component ai">Statistical Tests<span>KS · Chi-square</span></div>
+                    <div class="arch-component ai">Safety Score<span>0–100 + tags</span></div>
+                  </div>
+                </div>
+                <div class="arch-arrow-row">↓ CI/CD Gate</div>
+                <div class="arch-layer-group">
+                  <div class="arch-layer-title">Decision</div>
+                  <div class="arch-layer">
+                    <div class="arch-component infra">Score ≥ threshold → Deploy</div>
+                    <div class="arch-component external">Score &lt; threshold → Block + Alert + Report</div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="arch-section">
               <h4>Evaluation Dimensions</h4>
@@ -1799,57 +1618,61 @@
         content: `
           <div class="arch-diagram">
             <div class="arch-section">
-              <h4>Multimodal RAG Pipeline</h4>
-              <pre class="arch-code">
-┌─────────────────────────────────────────────────────────────────┐
-│                    Clinical Data Sources                          │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐          │
-│  │  ECG / PPG   │  │ Clinical     │  │  Lab Results │          │
-│  │  Waveforms   │  │ Notes (text) │  │  (HL7 FHIR)  │          │
-│  └──────┬───────┘  └──────┬───────┘  └──────┬───────┘          │
-└─────────┼─────────────────┼─────────────────┼───────────────────┘
-          │                 │                 │
-┌─────────┼─────────────────┼─────────────────┼───────────────────┐
-│         ▼                 ▼                 ▼                    │
-│                    Ingestion Layer                                │
-│  ┌─────────────────────────────────────────────────────────┐    │
-│  │  Waveform Encoder    │  Text Chunker   │  FHIR Parser   │    │
-│  │  (1D-CNN → 512d vec) │  (512 tok / 64 │  → Structured  │    │
-│  │                      │   overlap)      │  JSON          │    │
-│  └──────────────────────┴─────────────────┴────────────────┘    │
-│                              │                                   │
-│  ┌───────────────────────────┴───────────────────────────┐      │
-│  │              Multimodal Vector Store (FAISS)           │      │
-│  │  ┌────────────────────────────────────────────────┐   │      │
-│  │  │  Waveform embeddings  │  Text embeddings       │   │      │
-│  │  │  (512-dim)            │  (768-dim, BioClinical-│   │      │
-│  │  │                       │   BERT)                │   │      │
-│  │  └────────────────────────────────────────────────┘   │      │
-│  └─────────────────────────────────────────────────────┘       │
-│                              │                                   │
-│  ┌───────────────────────────┴───────────────────────────┐      │
-│  │              LangChain RAG Chain                        │      │
-│  │  Query ──▶ Hybrid Retriever ──▶ Context Assembly       │      │
-│  │            (BM25 + semantic)        │                  │      │
-│  │                                     ▼                  │      │
-│  │              ┌─────────────────────────────────────┐  │      │
-│  │              │  Claude (with clinical system prompt)│  │      │
-│  │              │  Generates:                         │  │      │
-│  │              │  • SOAP note (Subjective/Objective/ │  │      │
-│  │              │    Assessment/Plan)                  │  │      │
-│  │              │  • Triage level (1–5)               │  │      │
-│  │              │  • Differential diagnoses           │  │      │
-│  │              │  • Recommended follow-up actions    │  │      │
-│  │              └─────────────────────────────────────┘  │      │
-│  └─────────────────────────────────────────────────────┘       │
-└────────────────────────────┬────────────────────────────────────┘
-                             │
-┌────────────────────────────┴────────────────────────────────────┐
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐          │
-│  │  FastAPI     │  │  PostgreSQL  │  │  FHIR R4     │          │
-│  │  REST + SSE  │  │  Audit Log   │  │  Export      │          │
-│  └──────────────┘  └──────────────┘  └──────────────┘          │
-└─────────────────────────────────────────────────────────────────┘</pre>
+              <div class="arch-flow">
+                <div class="arch-layer-group">
+                  <div class="arch-layer-title">Clinical Data Sources</div>
+                  <div class="arch-layer">
+                    <div class="arch-component infra">ECG / PPG Waveforms</div>
+                    <div class="arch-component infra">Clinical Notes<span>free text</span></div>
+                    <div class="arch-component infra">Lab Results<span>HL7 FHIR</span></div>
+                  </div>
+                </div>
+                <div class="arch-arrow-row">↓</div>
+                <div class="arch-layer-group">
+                  <div class="arch-layer-title">Ingestion Layer</div>
+                  <div class="arch-layer">
+                    <div class="arch-component backend">Waveform Encoder<span>1D-CNN → 512-dim vec</span></div>
+                    <div class="arch-component backend">Text Chunker<span>512 tok / 64 overlap</span></div>
+                    <div class="arch-component backend">FHIR Parser<span>→ structured JSON</span></div>
+                  </div>
+                </div>
+                <div class="arch-arrow-row">↓</div>
+                <div class="arch-layer-group">
+                  <div class="arch-layer-title">Multimodal Vector Store — FAISS</div>
+                  <div class="arch-layer">
+                    <div class="arch-component database">Waveform Embeddings<span>512-dim</span></div>
+                    <div class="arch-component database">Text Embeddings<span>768-dim · BioClinicalBERT</span></div>
+                  </div>
+                </div>
+                <div class="arch-arrow-row">↓ LangChain RAG Chain</div>
+                <div class="arch-layer-group">
+                  <div class="arch-layer-title">Retrieval &amp; Generation</div>
+                  <div class="arch-layer">
+                    <div class="arch-component ai">Hybrid Retriever<span>BM25 + semantic</span></div>
+                    <div class="arch-component ai">Context Assembly</div>
+                    <div class="arch-component ai">Claude<span>clinical system prompt</span></div>
+                  </div>
+                </div>
+                <div class="arch-arrow-row">↓</div>
+                <div class="arch-layer-group">
+                  <div class="arch-layer-title">Outputs</div>
+                  <div class="arch-layer">
+                    <div class="arch-component ai">SOAP Note</div>
+                    <div class="arch-component ai">Triage Level<span>1–5</span></div>
+                    <div class="arch-component ai">Differential Diagnoses</div>
+                    <div class="arch-component ai">Follow-up Actions</div>
+                  </div>
+                </div>
+                <div class="arch-arrow-row">↓</div>
+                <div class="arch-layer-group">
+                  <div class="arch-layer-title">Infrastructure</div>
+                  <div class="arch-layer">
+                    <div class="arch-component backend">FastAPI<span>REST + SSE</span></div>
+                    <div class="arch-component database">PostgreSQL<span>audit log</span></div>
+                    <div class="arch-component external">FHIR R4 Export<span>DiagnosticReport</span></div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="arch-section">
               <h4>Clinical AI Design Principles</h4>

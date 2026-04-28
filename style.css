@@ -775,6 +775,77 @@ section {
   color: var(--text-primary);
 }
 
+/* Component-style architecture diagrams */
+.arch-flow {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.arch-layer-group {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 0;
+}
+
+.arch-layer-title {
+  background: rgba(255,255,255,0.04);
+  border-bottom: 1px solid var(--border);
+  padding: 6px 14px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.arch-layer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 10px 12px;
+}
+
+.arch-component {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 7px 12px;
+  border-radius: 7px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  border: 1px solid transparent;
+  min-width: 100px;
+  line-height: 1.3;
+}
+
+.arch-component span {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 400;
+  opacity: 0.7;
+  margin-top: 2px;
+}
+
+.arch-component.frontend  { background: rgba(59,130,246,0.12); border-color: rgba(59,130,246,0.3);  color: #93c5fd; }
+.arch-component.backend   { background: rgba(168,85,247,0.10); border-color: rgba(168,85,247,0.3);  color: #c4b5fd; }
+.arch-component.ai        { background: rgba(16,185,129,0.10); border-color: rgba(16,185,129,0.3);  color: #6ee7b7; }
+.arch-component.database  { background: rgba(245,158,11,0.10); border-color: rgba(245,158,11,0.3);  color: #fcd34d; }
+.arch-component.external  { background: rgba(249,115,22,0.10); border-color: rgba(249,115,22,0.3);  color: #fdba74; }
+.arch-component.agent     { background: rgba(236,72,153,0.10); border-color: rgba(236,72,153,0.3);  color: #f9a8d4; }
+.arch-component.infra     { background: rgba(100,116,139,0.14); border-color: rgba(100,116,139,0.3); color: #94a3b8; }
+
+.arch-arrow-row {
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  padding: 6px 0;
+  letter-spacing: 0.03em;
+}
+
 /* Responsive Modal */
 @media (max-width: 768px) {
   .modal {
