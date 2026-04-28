@@ -600,6 +600,14 @@ section {
   font-family: inherit;
 }
 
+.try-link {
+  color: #10b981;
+}
+
+.try-link:hover {
+  color: #059669;
+}
+
 .project-links {
   display: flex;
   gap: 16px;
