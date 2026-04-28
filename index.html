@@ -131,6 +131,72 @@
     <div class="container">
       <h2 class="section-title">Featured Projects</h2>
 
+      <div class="project-category platform-category">
+        <h3 class="category-title">Core AI Platform</h3>
+        <div class="projects-grid">
+
+          <div class="project-card">
+            <div class="project-content">
+              <div class="platform-badge">Platform · Career Intelligence</div>
+              <h4>Personal Target Path Check (PTPCS)</h4>
+              <p>AI-powered career path visualization platform. Users describe their goal in natural language; a 3-stage pipeline — Graph Neural Prompting → LLM generation → GNN enhancement — produces an interactive skill-node roadmap with difficulty scores, prerequisite links, and progress tracking.</p>
+              <div class="project-tech">
+                <span>FastAPI</span>
+                <span>Vue 3</span>
+                <span>PyTorch Geometric</span>
+                <span>PostgreSQL</span>
+                <span>Gemini / Groq</span>
+                <span>GCP Cloud Run</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/poku0857643/personal_target_check" target="_blank" class="project-link">View Code</a>
+                <button class="project-link design-btn" onclick="openModal('ptpcs')">View Design</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-content">
+              <div class="platform-badge">Platform · Health Monitoring</div>
+              <h4>ECG Monitor — Real-Time Signal Processing</h4>
+              <p>FastAPI service for continuous ECG signal processing from Apple Watch and clinical wearables. Provides batch R-peak detection via REST and live waveform analysis via WebSocket streaming, feeding physiological signals into the platform's health layer.</p>
+              <div class="project-tech">
+                <span>FastAPI</span>
+                <span>WebSocket</span>
+                <span>NumPy / SciPy</span>
+                <span>Apple Watch ECG</span>
+                <span>PhysioNet</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/poku0857643/FastAPI_ECG_preprocess" target="_blank" class="project-link">View Code</a>
+                <button class="project-link design-btn" onclick="openModal('ecg-monitor')">View Design</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-content">
+              <div class="platform-badge">Platform · ML Ops</div>
+              <h4>DriftDetect — Production ML Drift Monitor</h4>
+              <p>Three-model voting ensemble (GNN + Statistical + Random Forest) for detecting covariate, structural, and outlier-pattern drift across the platform's production models. Integrated with GCP Cloud Monitoring for real-time alerting and HTML drift reports.</p>
+              <div class="project-tech">
+                <span>GATConv</span>
+                <span>KS / PSI / Wasserstein</span>
+                <span>Isolation Forest</span>
+                <span>SHAP</span>
+                <span>GCP Cloud Run</span>
+                <span>FastAPI</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/poku0857643/drift_detect" target="_blank" class="project-link">View Code</a>
+                <button class="project-link design-btn" onclick="openModal('drift-detection')">View Design</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
       <div class="project-category">
         <h3 class="category-title">AI & Machine Learning</h3>
         <div class="projects-grid">
@@ -717,6 +783,127 @@
   <script>
     // Architecture data for each project
     const architectures = {
+      'ptpcs': {
+        title: 'Personal Target Path Check (PTPCS) — Platform Architecture',
+        content: `
+          <div class="arch-diagram">
+            <div class="arch-section">
+              <h4>3-Stage Quest Generation Pipeline</h4>
+              <div class="arch-flow">
+                <div class="arch-layer-group">
+                  <div class="arch-layer-title">Entry</div>
+                  <div class="arch-layer">
+                    <div class="arch-component frontend">Vue 3 Frontend<span>Vite · TSX · Pinia</span></div>
+                  </div>
+                </div>
+                <div class="arch-arrow-row">↓ Career goal (natural language)</div>
+                <div class="arch-layer-group">
+                  <div class="arch-layer-title">Stage 1 — Graph Neural Prompting</div>
+                  <div class="arch-layer">
+                    <div class="arch-component ai">CareerGraphSAGE<span>SAGEConv 393→256→128</span></div>
+                    <div class="arch-component backend">Similar Node Lookup<span>embedding cosine search</span></div>
+                    <div class="arch-component backend">Difficulty &amp; Path Stats<span>KB context builder</span></div>
+                  </div>
+                </div>
+                <div class="arch-arrow-row">↓ Enriched prompt</div>
+                <div class="arch-layer-group">
+                  <div class="arch-layer-title">Stage 2 — LLM Generation</div>
+                  <div class="arch-layer">
+                    <div class="arch-component external">Gemini 2.5 Flash</div>
+                    <div class="arch-component external">Groq (free tier)</div>
+                    <div class="arch-component external">Ollama (local)</div>
+                    <div class="arch-component external">Anthropic Claude</div>
+                  </div>
+                </div>
+                <div class="arch-arrow-row">↓ Raw quest nodes + edges</div>
+                <div class="arch-layer-group">
+                  <div class="arch-layer-title">Stage 3 — GNN Post-Enhancement</div>
+                  <div class="arch-layer">
+                    <div class="arch-component ai">Link Prediction<span>missing prerequisite edges</span></div>
+                    <div class="arch-component ai">Difficulty Scoring<span>GNN-predicted 1–10</span></div>
+                    <div class="arch-component ai">Pattern Matching<span>KB similarity lookup</span></div>
+                  </div>
+                </div>
+                <div class="arch-arrow-row">↓</div>
+                <div class="arch-layer-group">
+                  <div class="arch-layer-title">Persistence &amp; Infrastructure</div>
+                  <div class="arch-layer">
+                    <div class="arch-component database">PostgreSQL 16<span>nodes · edges · embeddings · logs</span></div>
+                    <div class="arch-component backend">FastAPI<span>REST · OAuth2 · rate-limiting</span></div>
+                    <div class="arch-component infra">GCP Cloud Run<span>Docker · autoscale-to-zero</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="arch-section">
+              <h4>GNN Model</h4>
+              <ul class="arch-list">
+                <li><strong>Input:</strong> 393-dim node features — text embedding (384d, MiniLM) + node type one-hot (6d) + scalars (3d)</li>
+                <li><strong>Encoder:</strong> CareerGraphSAGE — SAGEConv 393→256→128 with BatchNorm + Dropout</li>
+                <li><strong>Heads:</strong> Link predictor (BCE), difficulty predictor (MSE), reconstruction decoder (MSE)</li>
+                <li><strong>Loss:</strong> 1.0 × Link + 0.5 × Difficulty + 0.3 × Reconstruction</li>
+                <li><strong>Retrain trigger:</strong> ≥50 new nodes accumulated since last checkpoint</li>
+              </ul>
+            </div>
+          </div>
+        `
+      },
+      'ecg-monitor': {
+        title: 'ECG Monitor — Real-Time Signal Processing Architecture',
+        content: `
+          <div class="arch-diagram">
+            <div class="arch-section">
+              <h4>Signal Processing Pipeline</h4>
+              <div class="arch-flow">
+                <div class="arch-layer-group">
+                  <div class="arch-layer-title">Data Sources</div>
+                  <div class="arch-layer">
+                    <div class="arch-component infra">Apple Watch Series 8<span>wrist ECG · 500 Hz</span></div>
+                    <div class="arch-component infra">PhysioNet Datasets<span>challenge-2017 · clinical</span></div>
+                    <div class="arch-component infra">Generic Wearables<span>configurable fs</span></div>
+                  </div>
+                </div>
+                <div class="arch-arrow-row">↓</div>
+                <div class="arch-layer-group">
+                  <div class="arch-layer-title">FastAPI Service</div>
+                  <div class="arch-layer">
+                    <div class="arch-component backend">POST /process<span>batch ECG · R-peak detection</span></div>
+                    <div class="arch-component backend">WS /ws/realtimeECG<span>live streaming · frame-by-frame</span></div>
+                  </div>
+                </div>
+                <div class="arch-arrow-row">↓</div>
+                <div class="arch-layer-group">
+                  <div class="arch-layer-title">Signal Processing Core</div>
+                  <div class="arch-layer">
+                    <div class="arch-component ai">Bandpass Filter<span>0.5–40 Hz Butterworth</span></div>
+                    <div class="arch-component ai">R-Peak Detector<span>fixed + adaptive threshold</span></div>
+                    <div class="arch-component ai">HRV Extraction<span>RR intervals · SDNN · RMSSD</span></div>
+                    <div class="arch-component ai">Waveform Segmentation<span>P / QRS / T delineation</span></div>
+                  </div>
+                </div>
+                <div class="arch-arrow-row">↓</div>
+                <div class="arch-layer-group">
+                  <div class="arch-layer-title">Outputs</div>
+                  <div class="arch-layer">
+                    <div class="arch-component database">Processed Signal<span>peaks · intervals · features</span></div>
+                    <div class="arch-component external">Platform Health Layer<span>feeds Blood Pressure Estimator</span></div>
+                    <div class="arch-component external">DriftDetect API<span>structural drift on waveform morphology</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="arch-section">
+              <h4>API Contract</h4>
+              <ul class="arch-list">
+                <li><strong>POST /process:</strong> Accepts signal array + sampling frequency, returns peaks, HRV metrics, segmentation</li>
+                <li><strong>WS /ws/realtimeECG:</strong> Streams processed frames at native sample rate for live dashboards</li>
+                <li><strong>Threshold modes:</strong> <em>fixed</em> (amplitude %) or <em>adaptive</em> (sliding window mean + σ)</li>
+                <li><strong>Platform role:</strong> Feeds 512-dim waveform embeddings into the Clinical AI Assistant's multimodal FAISS store</li>
+              </ul>
+            </div>
+          </div>
+        `
+      },
       'rag-chatbot': {
         title: 'RAG Chatbot - System Architecture',
         content: `
